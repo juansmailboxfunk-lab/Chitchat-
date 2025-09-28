@@ -1,0 +1,36 @@
+:root {
+  --bg:#ffffff; --text:#111827; --muted:#6b7280; --accent:#0ea5e9; --surface:#f7fafc; --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text);line-height:1.6}
+img{max-width:100%;height:auto;display:block}
+.container{width:min(1100px,92%);margin-inline:auto}
+a{color:var(--accent)}
+.skip-link{position:absolute;left:-9999px;top:auto}
+.skip-link:focus{left:1rem;top:1rem;background:#fff;padding:.5rem .75rem;border-radius:.5rem;outline:2px solid var(--accent)}
+.site-header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(6px);border-bottom:1px solid #e5e7eb}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0}
+.brand{text-decoration:none;font-weight:700;color:var(--text);letter-spacing:.02em}
+.nav a{margin-left:1rem;text-decoration:none;color:var(--text)}
+.nav .btn{margin-left:1.25rem}
+.lang{margin-left:.75rem;font-weight:600}
+.hero{padding:min(12vh,8rem) 0}
+.grid-2{display:grid;gap:2rem;grid-template-columns:1.1fr .9fr}
+.lead{color:var(--muted);font-size:clamp(1rem,.9rem + .6vw,1.25rem);margin:.5rem 0 1.25rem}
+.actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.features{padding:3rem 0;background:var(--surface)}
+.feature-grid{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.btn{display:inline-block;border:1px solid #e5e7eb;padding:.6rem 1rem;border-radius:.65rem;text-decoration:none;font-weight:600}
+.btn--primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn--ghost{background:transparent}
+.site-footer{border-top:1px solid #e5e7eb;padding:1.25rem 0;margin-top:3rem}
+form{display:grid;gap:.75rem;max-width:720px}
+label{font-weight:600}
+input,textarea{width:100%;padding:.6rem .75rem;border:1px solid #e5e7eb;border-radius:.5rem;font:inherit}
+.checkbox{display:flex;align-items:flex-start;gap:.5rem}
+details{padding:.5rem 0}
+ul.clean{padding-left:1.25rem}
+ul.clean li{margin:.25rem 0}
+@media (max-width:900px){.grid-2{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none;transition:none}}
