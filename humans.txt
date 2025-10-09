@@ -1,9 +1,0 @@
-/* TEAM */
-Owner: ChitChat
-Website: https://example.com
-
-/* THANKS */
-Tools: ChatGPT, Figma, VS Code
-
-/* SITE */
-Standards: HTML5, CSS, JS
