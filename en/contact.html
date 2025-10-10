@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — ChitChat Logopedia</title>
+  <meta name="description" content="Speech & Language Therapy in Zaragoza — ChitChat Logopedia" />
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand"><span class="logo">ChitChat</span></a>
+      <nav>
+        <ul>
+          <li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html" class="btn">Book</a></li>
+          <li class="lang">| | <a class="active">EN</a> <a href="../index.html">ES</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <section>
+    <div class="container">
+      <h2>Book your free intro call</h2>
+      <p class="sub">Tell me a little about your child and I’ll reply within 1 business day.</p>
+      <div class="grid cols-2">
+        <form id="contactForm" action="#" method="POST">
+          <div class="row">
+            <div><label class="sr-only" for="name">Name</label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
+            <div><label class="sr-only" for="email">Email</label><input id="email" name="email" type="email" placeholder="Email" required /></div>
+          </div>
+          <div class="row">
+            <div><label class="sr-only" for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="Phone (optional)" /></div>
+            <div><label class="sr-only" for="service">Service</label><select id="service" name="service"><option value="General">General enquiry</option><option>Articulation</option><option>Early language</option><option>Fluency</option><option>Parent coaching</option></select></div>
+          </div>
+          <label class="sr-only" for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me a little about your goals"></textarea>
+          <button class="btn" type="submit">Send</button>
+          <p id="formMsg" aria-live="polite" style="margin:6px 0 0;color:#2f6f71"></p>
+        </form>
+        <div>
+          <div class="card"><h3>Prefer WhatsApp?</h3><p>Message me and I’ll reply as soon as I’m free.</p><p><a class="btn btn-outline" href="https://wa.me/34000000000" target="_blank" rel="noopener">Chat on WhatsApp</a></p></div>
+          <div class="card" style="margin-top:12px"><h3>Hours</h3><p>Mon–Fri • 9:30–18:00</p><h3 style="margin-top:12px">Location</h3><p>Zaragoza • Online or home visits</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+      <small>© <span id="year"></span> ChitChat Logopedia • Zaragoza</small>
+      <small><a href="privacy.html">Privacy</a> • <a href="impressum.html">Impressum</a></small>
+    </div>
+  </footer>
+  <script src="../assets/js/script.js" defer></script>
+</body>
+</html>
