@@ -1,0 +1,75 @@
+
+/* Chit Chat - Bilingual One-Page Site (Colorful) */
+/* Typography & Reset */
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:#1f2937; background: linear-gradient(135deg, #ffe7f0 0%, #e5f3ff 50%, #fff9e6 100%); }
+img { max-width:100%; display:block; }
+a { color:#0f766e; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* Utility */
+.section { padding: 64px 0; }
+.section h2 { font-size: clamp(28px, 2.4vw + 14px, 42px); margin: 0 0 16px; color:#0f172a; }
+.section p.lead { font-size: 18px; color:#334155; margin: 0 0 24px; }
+.grid { display:grid; gap: 20px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 900px){ .grid-3, .grid-4{ grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px){ .grid-3, .grid-4, .grid-2{ grid-template-columns: 1fr; } }
+
+/* Topbar */
+.topbar { position: sticky; top:0; z-index: 100; backdrop-filter: saturate(140%) blur(8px); background: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(15,23,42,0.08); }
+.topbar .inner { display:flex; align-items:center; justify-content:space-between; padding: 12px 0; }
+.brand { display:flex; align-items:center; gap:12px; }
+.brand img { width:40px; height:40px; }
+.brand .name { font-weight:800; letter-spacing: 0.2px; }
+.lang-toggle { display:flex; gap:8px; }
+.lang-toggle button { border:1px solid rgba(15,23,42,0.15); background:#fff; padding:8px 12px; border-radius: 999px; cursor:pointer; }
+.lang-toggle button.active { background:#0ea5e9; color:white; border-color: transparent; }
+.cta-btn { background: linear-gradient(90deg, #22c55e, #0ea5e9); color:white; padding:10px 16px; border-radius: 10px; border:none; cursor:pointer; font-weight:700; }
+.cta-btn:hover { opacity:0.95; }
+
+/* Hero */
+.hero { padding: 64px 0 24px; }
+.hero .wrap { display:grid; gap:28px; grid-template-columns: 1.15fr 0.85fr; align-items:center; }
+@media (max-width: 900px){ .hero .wrap { grid-template-columns: 1fr; } }
+.hero h1 { font-size: clamp(34px, 3vw + 18px, 56px); margin: 0 0 12px; line-height: 1.05; }
+.badges { display:flex; gap:10px; flex-wrap:wrap; margin: 14px 0 20px; }
+.badge { padding:6px 10px; background:#fff; border:1px dashed rgba(15,23,42,0.18); border-radius: 999px; font-size:14px; }
+.hero-card { background: linear-gradient(135deg, #fff, #f0fbff); border:1px solid rgba(15,23,42,0.08); border-radius: 16px; padding: 16px; box-shadow: 0 10px 30px rgba(2,6,23,0.06); }
+
+/* Services */
+.card { background:white; border:1px solid rgba(2,6,23,0.08); border-radius: 16px; padding: 18px; display:flex; flex-direction:column; gap:10px; box-shadow: 0 8px 20px rgba(2,6,23,0.05); }
+.card .icon { width:44px; height:44px; }
+.card h3 { margin: 6px 0 4px; font-size: 18px; }
+.card p { margin:0; color:#475569; font-size: 15px; }
+
+/* About & Approach */
+.feature { background: white; border:1px solid rgba(2,6,23,0.08); border-radius: 18px; padding: 20px; }
+.feature h3 { margin:0 0 8px; }
+.list { margin:0; padding-left: 18px; color:#334155; }
+
+/* Testimonials */
+.quote { background: linear-gradient(135deg, #fff, #f7efff); border:1px solid rgba(2,6,23,0.08); border-radius: 18px; padding: 18px; font-style: italic; }
+.quote .by { margin-top:8px; font-style: normal; color:#334155; }
+
+/* FAQ */
+.faq-item { background:white; border:1px solid rgba(2,6,23,0.08); border-radius: 16px; padding: 16px; }
+.faq-item summary { cursor: pointer; font-weight: 700; }
+
+/* Contact */
+.form { background:white; border:1px solid rgba(2,6,23,0.08); border-radius: 18px; padding: 20px; }
+.input { width:100%; padding:12px 14px; border:1px solid rgba(15,23,42,0.15); border-radius: 10px; margin-bottom:12px; }
+.input:focus { outline: 2px solid #0ea5e9; border-color: transparent; }
+.row { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 640px){ .row { grid-template-columns: 1fr; } }
+.form .hint { color:#64748b; font-size: 14px; }
+
+/* Footer */
+footer { padding: 32px 0 64px; color:#334155; }
+footer .links { display:flex; gap:14px; flex-wrap:wrap; }
+footer .tiny { font-size: 13px; color:#64748b; margin-top: 10px; }
+.whatsapp { display:inline-flex; align-items:center; gap:8px; }
+.whatsapp svg { width:18px; height:18px; }
