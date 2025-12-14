@@ -233,6 +233,227 @@
             </div>
 
             <button class="service-toggle" type="button" aria-expanded="false" aria-controls="more-5">
-              <span class
+              <span class="toggle-icon" aria-hidden="true">+</span>
+              <span class="toggle-text">Más información</span>
+            </button>
+          </article>
+
+          <!-- 6 -->
+          <article class="service-card" id="servicio-familias">
+            <div class="service-top">
+              <img src="images/service-6.png" alt="" class="service-icon" />
+              <h3>Orientación a familias</h3>
+            </div>
+
+            <p class="service-preview">
+              Te doy pautas concretas para casa y escuela: qué decir, cómo esperar y cómo reforzar, potenciando sus capacidades.
+            </p>
+
+            <div class="service-more" hidden>
+              <p>
+                Ajustamos estrategias según situación real: rutinas, juego, pantallas, hermanos, colegio.
+                Pautas simples, consistentes y fáciles de aplicar.
+              </p>
+              <ul class="bullets">
+                <li>Estrategias de interacción</li>
+                <li>Rutinas comunicativas</li>
+                <li>Seguimiento y ajustes</li>
+              </ul>
+            </div>
+
+            <button class="service-toggle" type="button" aria-expanded="false" aria-controls="more-6">
+              <span class="toggle-icon" aria-hidden="true">+</span>
+              <span class="toggle-text">Más información</span>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="sobre-mi">
+      <div class="container split">
+        <div>
+          <h2>Sobre mí</h2>
+          <p>
+            Soy logopeda y trabajo con niños y familias, creando un espacio seguro donde la comunicación
+            se construye paso a paso.
+          </p>
+          <p class="muted">
+            (Añade aquí tu formación, experiencia, idiomas y modalidad de atención.)
+          </p>
+
+          <div class="mini-cards">
+            <div class="mini-card">
+              <strong>Enfoque</strong>
+              <span class="muted">Calma, evidencia, objetivos claros</span>
+            </div>
+            <div class="mini-card">
+              <strong>Familia</strong>
+              <span class="muted">Pautas prácticas para casa</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Cómo trabajamos</h3>
+          <ol class="steps">
+            <li><strong>1.</strong> Primera consulta</li>
+            <li><strong>2.</strong> Evaluación + objetivos</li>
+            <li><strong>3.</strong> Sesiones + pautas</li>
+            <li><strong>4.</strong> Revisión y ajustes</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Preguntas frecuentes</h2>
+          <p>Respuestas rápidas. Si quieres, luego refinamos el contenido y el tono.</p>
+        </div>
+
+        <div class="accordion" data-accordion>
+          <button class="acc-btn" aria-expanded="false">
+            ¿Cuándo es recomendable consultar?
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="acc-panel" hidden>
+            <p>Cuando notes dificultades en habla, lenguaje, voz, deglución o comunicación.</p>
+          </div>
+
+          <button class="acc-btn" aria-expanded="false">
+            ¿Cómo son las sesiones?
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="acc-panel" hidden>
+            <p>Dinámicas, estructuradas y adaptadas a la edad, objetivos y motivación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contacto">
+      <div class="container contact">
+        <div>
+          <h2>Contacto</h2>
+          <p>Escríbeme y te respondo lo antes posible.</p>
+
+          <div class="contact-cards">
+            <a class="contact-card" href="mailto:tuemail@ejemplo.com">
+              <strong>Email</strong>
+              <span class="muted">tuemail@ejemplo.com</span>
+            </a>
+            <a class="contact-card" href="#" target="_blank" rel="noreferrer">
+              <strong>WhatsApp</strong>
+              <span class="muted">Añade tu enlace</span>
+            </a>
+          </div>
+
+          <p class="muted legal-line">
+            Consulta el <a href="legal.html">Aviso legal</a> y la <a href="privacy.html">Política de privacidad</a>.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>Horarios</h3>
+          <p class="muted">Añade tu disponibilidad (mañanas / tardes) y zona o modalidad (presencial/online).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> Chit Chat</p>
+      <div class="footer-links">
+        <a href="legal.html">Aviso legal</a>
+        <a href="privacy.html">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+  <!-- Inline enhancement: services + faq toggles (safe even if script.js already has logic) -->
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // SERVICES smooth accordion
+    document.querySelectorAll(".service-card").forEach((card) => {
+      const btn = card.querySelector(".service-toggle");
+      const more = card.querySelector(".service-more");
+      const text = card.querySelector(".toggle-text");
+      if (!btn || !more || !text) return;
+
+      // Make measurable
+      more.hidden = false;
+
+      const setClosed = () => {
+        btn.setAttribute("aria-expanded", "false");
+        card.dataset.open = "false";
+        more.style.height = "0px";
+        more.style.opacity = "0";
+        text.textContent = "Más información";
+      };
+
+      const setOpen = () => {
+        btn.setAttribute("aria-expanded", "true");
+        card.dataset.open = "true";
+        more.style.opacity = "1";
+        more.style.height = more.scrollHeight + "px";
+        text.textContent = "Menos información";
+      };
+
+      // Init closed
+      setClosed();
+
+      btn.addEventListener("click", () => {
+        const opening = btn.getAttribute("aria-expanded") !== "true";
+        if (opening) {
+          // 0 -> height
+          more.style.height = "0px";
+          more.style.opacity = "1";
+          requestAnimationFrame(() => setOpen());
+        } else {
+          // height -> 0
+          more.style.height = more.scrollHeight + "px";
+          requestAnimationFrame(() => {
+            more.style.height = "0px";
+            more.style.opacity = "0";
+            btn.setAttribute("aria-expanded", "false");
+            card.dataset.open = "false";
+            text.textContent = "Más información";
+          });
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (card.dataset.open === "true") {
+          more.style.height = more.scrollHeight + "px";
+        }
+      });
+    });
+
+    // FAQ accordion (simple)
+    document.querySelectorAll("[data-accordion] .acc-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const panel = btn.nextElementSibling;
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!expanded));
+        panel.hidden = expanded;
+        const icon = btn.querySelector(".acc-icon");
+        if (icon) icon.textContent = expanded ? "+" : "–";
+      });
+    });
+  </script>
+</body>
+</html>
+
 
 
