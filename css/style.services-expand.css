@@ -1,0 +1,30 @@
+
+/* =========================
+   SERVICES – HORIZONTAL EXPAND ON DESKTOP
+   ========================= */
+
+.services-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items:start;
+}
+
+/* Expanded state */
+.service-card.expanded{
+  grid-column: 1 / span 2; /* ~66% width */
+}
+
+@media (min-width: 1100px){
+  .service-card.expanded{
+    grid-column: 1 / span 2;
+  }
+  .service-card.expanded.align-right{
+    grid-column: 2 / span 2;
+  }
+}
+
+/* Smooth transition */
+.service-card{
+  transition: grid-column .35s ease, box-shadow .25s ease, transform .25s ease;
+}
