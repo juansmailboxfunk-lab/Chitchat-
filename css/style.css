@@ -513,3 +513,37 @@ h3{ font-size: 1.12rem; }
   background: rgba(192,132,252,.12);
   color: #4c1d95;
 }
+
+/* SERVICES: expand open card to ~66% width on desktop + dim others + highlight */
+@media (min-width: 920px){
+  .services-grid.has-expanded .service-card:not(.expanded){
+    opacity: .55;
+    filter: saturate(.9);
+    transition: opacity .2s ease, filter .2s ease;
+  }
+
+  .service-card.expanded{
+    grid-column: 1 / span 2; /* ~66% */
+    z-index: 3;
+    box-shadow: 0 20px 46px rgba(0,0,0,.12);
+    transform: translateY(-2px);
+  }
+
+  .service-card.expanded.align-right{
+    grid-column: 2 / span 2;
+  }
+
+  .service-card.expanded::before{
+    content:"";
+    position:absolute;
+    inset:-14px;
+    border-radius: calc(var(--radius, 18px) + 14px);
+    background:
+      radial-gradient(circle at 20% 20%, rgba(250,204,21,.22), transparent 60%),
+      radial-gradient(circle at 80% 30%, rgba(251,113,133,.16), transparent 62%),
+      radial-gradient(circle at 55% 90%, rgba(192,132,252,.12), transparent 60%);
+    filter: blur(10px);
+    z-index: -1;
+    pointer-events:none;
+  }
+}
