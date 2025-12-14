@@ -641,3 +641,57 @@ main > section{ padding-inline: 12px; }
   opacity: .75;
   cursor: wait;
 }
+
+/* Success / error micro-animations */
+@keyframes popIn {
+  0% { transform: translateY(-6px) scale(.98); opacity: 0; }
+  60% { transform: translateY(0) scale(1.01); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.form-status.animate-in{
+  animation: popIn .35s ease both;
+}
+
+.form-status.animate-error{
+  animation: shake .35s ease both;
+}
+
+/* Little check badge */
+.status-icon{
+  display:inline-grid;
+  place-items:center;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  margin-right: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.9);
+  vertical-align: middle;
+}
+
+.form-status.success .status-icon{
+  border-color: rgba(34,197,94,.35);
+  background: rgba(34,197,94,.12);
+  color: #166534;
+}
+
+.form-status.error .status-icon{
+  border-color: rgba(239,68,68,.35);
+  background: rgba(239,68,68,.12);
+  color: #7f1d1d;
+}
+
+.form-status.loading .status-icon{
+  border-color: rgba(192,132,252,.35);
+  background: rgba(192,132,252,.12);
+  color: #4c1d95;
+}
