@@ -155,3 +155,97 @@ document.querySelectorAll("[data-accordion] .acc-btn").forEach((btn) => {
     }
   });
 })();
+
+/* =========================
+   CONTACT FORM — HARD FIX
+   (paste at very bottom)
+   ========================= */
+
+.contact-form{
+  display:block;
+}
+
+.contact-form-head{
+  margin-bottom: 10px;
+}
+
+.contact-form-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 720px){
+  .contact-form-grid{ grid-template-columns: 1fr; }
+}
+
+.contact-form .form-field{
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.contact-form .form-field label{
+  font-weight: 800;
+  font-size: .95rem;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.contact-form .form-field input,
+.contact-form .form-field textarea{
+  width: 100%;
+  max-width: 100%;
+  display:block;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.92);
+}
+
+.contact-form .form-field textarea{
+  min-height: 170px;
+  resize: vertical;
+}
+
+/* Status banner should not be flexed weirdly */
+.contact-form .form-status{
+  display:block;
+  width: 100%;
+  margin: 12px 0 6px;
+}
+
+/* Fix the bottom row layout (button + privacy line) */
+.contact-form-actions{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  margin-top: 14px;
+  justify-content: flex-start;  /* IMPORTANT: stops pushing text to far right */
+  flex-wrap: wrap;             /* allows wrapping nicely */
+}
+
+.contact-form-actions .btn{
+  flex: 0 0 auto;
+}
+
+.contact-form-actions p{
+  margin: 0;
+  flex: 1 1 420px;
+  min-width: 240px;
+}
+
+/* On small screens, stack neatly */
+@media (max-width: 720px){
+  .contact-form-actions{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .contact-form-actions .btn{
+    width: 100%;
+    justify-content:center;
+  }
+  .contact-form-actions p{
+    min-width: 0;
+  }
+}
