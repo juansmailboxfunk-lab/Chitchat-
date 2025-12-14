@@ -695,3 +695,5 @@ main > section{ padding-inline: 12px; }
   background: rgba(192,132,252,.12);
   color: #4c1d95;
 }
+
+body{ outline: 6px solid hotpink !important; }
