@@ -2,212 +2,227 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Chit Chat — Logopedia | Speech Therapy</title>
-  <meta name="description" content="Chit Chat: logopedia para niños y familias. Atención cercana, lúdica y basada en evidencia. Bilingüe ES/EN.">
-
-  <!-- Favicon (SVG) -->
-  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-
-  <!-- Preload hero and stylesheet -->
-  <link rel="preload" href="images/hero.png" as="image" type="image/svg+xml" fetchpriority="high">
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Open Graph / Twitter (update URL and image when deployed) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Chit Chat — Logopedia | Speech Therapy">
-  <meta property="og:description" content="Logopedia cercana y lúdica para niños y familias. Bilingüe ES/EN.">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://example.com/images/og-cover.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Chit Chat — Logopedia | Speech Therapy">
-  <meta name="twitter:description" content="Logopedia cercana y lúdica para niños y familias. Bilingüe ES/EN.">
-  <meta name="twitter:image" content="https://example.com/images/og-cover.png">
-
-  <!-- JSON-LD: MedicalBusiness (adjust details as needed) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Chit Chat",
-    "url": "https://example.com/",
-    "image": "https://example.com/images/og-cover.png",
-    "telephone": "+34 600 000 000",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Calle Ejemplo 123",
-      "addressLocality": "Madrid",
-      "postalCode": "28000",
-      "addressCountry": "ES"
-    },
-    "areaServed": "Madrid",
-    "openingHours": "Mo-Fr 10:00-19:00",
-    "sameAs": ["https://www.instagram.com/yourprofile","https://www.facebook.com/yourpage"]
-  }
-  </script>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chit Chat — Logopedia para niños y familias</title>
+<meta name="description" content="Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online.">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a class="skip-link" href="#services">Skip to content</a>
+<a class="skip" href="#inicio">Saltar al contenido</a>
 
-  <header class="topbar">
-    <div class="container inner">
-      <div class="brand">
-        <img src="images/logo.svg" alt="Chit Chat logo" loading="eager" fetchpriority="high">
-        <div class="name">Chit Chat</div>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#inicio">
+        <img src="images/logo.svg" alt="Chit Chat">
+        <span>Chit Chat</span>
+      </a>
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#enfoque">Enfoque</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="container">
+    <div class="heroGrid">
+      <div>
+        <h1>Chit Chat — Logopedia para niños y familias</h1>
+        <p>Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online.</p>
+        <div class="badges">Logopeda titulada · Atención a niños · Neurodiversidad · Apoyo a familias</div>
+        <a class="btn" href="#contacto">Reserva una cita</a>
       </div>
-      <nav class="navlinks" id="anchorLinks" aria-label="Section navigation">
-        <!-- Filled by JS -->
-      </nav>
-      <div class="lang-toggle">
-        <button id="ESBtn" class="active" aria-pressed="true">ES</button>
-        <button id="ENBtn" aria-pressed="false">EN</button>
-        <a href="#contact"><button class="cta-btn" style="margin-left:8px;">Contact</button></a>
+      <div class="heroArt">
+        <img src="images/hero.png" alt="Ilustración: logopedia infantil y comunicación" loading="eager">
       </div>
-    </div>
-  </header>
-
-  <main class="fade-wrap">
-    <section class="hero" id="hero">
-      <div class="container wrap">
-        <div>
-          <h1 id="heroTitle">Chit Chat — Logopedia para niños y familias</h1>
-          <p id="heroSub" class="lead">Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online.</p>
-          <div id="badges" class="badges"></div>
-          <button id="ctaBtn" class="cta-btn" aria-label="Scroll to contact">Reserva una cita</button>
-        </div>
-        <div class="hero-card">
-          <img src="images/hero.svg" alt="Illustration of child speech therapy" loading="eager" fetchpriority="high">
-        </div>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="container">
-        <h2 id="servicesTitle">Servicios</h2>
-        <p id="servicesLead" class="lead">Seis áreas clave para apoyar a tu peque:</p>
-        <div id="servicesGrid" class="grid grid-3"></div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container grid grid-2">
-        <div class="feature">
-          <h2 id="aboutTitle">Sobre Chit Chat</h2>
-          <p id="aboutText">
-            Acompañamos a niños y familias con una logopedia cercana, práctica y con resultados.
-          </p>
-        </div>
-        <div class="feature">
-          <h2 id="approachTitle">Enfoque</h2>
-          <ul id="approachList" class="list"></ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials" class="section">
-      <div class="container">
-        <h2 id="testimonialsTitle">Testimonios</h2>
-        <div id="testimonialsWrap" class="grid grid-3"></div>
-      </div>
-    </section>
-
-    <section id="faq" class="section">
-      <div class="container">
-        <h2 id="faqTitle">Preguntas frecuentes</h2>
-        <div id="faqWrap" class="grid grid-3"></div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container grid grid-2">
-        <div>
-          <h2 id="contactTitle">Contacto</h2>
-          <p id="contactLead" class="lead">Cuéntanos un poco y te respondemos pronto.</p>
-          <div class="form">
-            <!-- Replace data-formspree with your Formspree endpoint -->
-            <form id="contactForm" data-formspree="">
-              <div class="row">
-                <div>
-                  <input id="nameInput" class="input" type="text" name="name" placeholder="Tu nombre" required>
-                  <div id="nameError" class="error" aria-live="polite"></div>
-                </div>
-                <div>
-                  <input id="emailInput" class="input" type="email" name="email" placeholder="Tu email" required>
-                  <div id="emailError" class="error" aria-live="polite"></div>
-                </div>
-              </div>
-              <input id="phoneInput" class="input" type="text" name="phone" placeholder="Teléfono (opcional)">
-              <textarea id="msgInput" class="input" name="message" rows="5" placeholder="Mensaje" required></textarea>
-              <div id="msgError" class="error" aria-live="polite"></div>
-
-              <label style="display:flex;gap:8px;align-items:flex-start;margin:6px 0 10px;">
-                <input id="gdpr" type="checkbox" required>
-                <span id="gdprLabel">He leído y acepto la política de privacidad.</span>
-              </label>
-              <div id="gdprError" class="error" aria-live="polite"></div>
-
-              <button id="submitBtn" class="cta-btn" type="submit">Enviar</button>
-              <div id="formHint" class="hint" style="margin-top:10px;">Usamos Formspree para enviar los mensajes de forma segura.</div>
-            </form>
-          </div>
-        </div>
-        <div>
-          <div class="feature">
-            <p><strong>WhatsApp</strong></p>
-            <a class="whatsapp" href="https://wa.me/34600000000" target="_blank" rel="noopener">
-              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.01c-.27-.14-1.6-.79-1.84-.88-.24-.09-.42-.14-.6.14-.18.27-.69.88-.84 1.06-.15.18-.31.2-.58.07-.27-.14-1.13-.41-2.16-1.31-.8-.71-1.34-1.58-1.49-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.98-.21-.51-.43-.44-.6-.45l-.51-.01c-.18 0-.47.07-.72.34-.24.27-.95.93-.95 2.27 0 1.33.98 2.62 1.12 2.8.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.57.65.2 1.24.17 1.7.1.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.06-.11-.24-.18-.51-.31zM16 3C8.82 3 3 8.82 3 16c0 2.3.62 4.46 1.69 6.32L3 29l6.86-1.8A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3z"/></svg>
-              <span id="whatsLabel">Escríbenos por WhatsApp</span>
-            </a>
-          </div>
-          <div class="feature" style="margin-top:14px;">
-            <p class="hint">Correo alternativo: <a href="mailto:hello@chitchat.example">hello@chitchat.example</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Back-to-top button -->
-  <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
-
-  <!-- Consent banner (analytics) -->
-  <div id="consentBox" class="consent" role="dialog" aria-live="polite" style="display:none;">
-    <p id="consentText">Usamos analíticas ligeras (sin cookies) para mejorar la web. ¿Aceptas?</p>
-    <div class="actions">
-      <button id="declineBtn" class="btn">Rechazar</button>
-      <button id="acceptBtn" class="btn primary">Aceptar</button>
     </div>
   </div>
+</section>
 
-  <!-- Success Overlay -->
-  <style>
-    #successOverlay{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.3);z-index:1400;opacity:0;transition:opacity .18s ease}
-    #successOverlay.show{opacity:1}
-    .success-card{background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(15,23,42,.1);box-shadow:0 10px 30px rgba(2,6,23,.15);max-width:420px}
-    .success-card h3{margin:0 0 8px}
-    .success-card p{margin:0 0 14px;color:#334155}
-  </style>
-  <div id="successOverlay" aria-modal="true" role="dialog" aria-labelledby="successTitle">
-    <div class="success-card">
-      <h3 id="successTitle">¡Gracias!</h3>
-      <p>Hemos recibido tu mensaje. Te contactaremos pronto.</p>
-      <button id="successClose" class="btn primary">Cerrar</button>
+<section id="servicios" class="section">
+  <div class="container">
+    <h2>¿Qué ofrecemos?</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="cardTop">
+          <img src="images/service-estimulacion.png" alt="Estimulación temprana">
+          <div class="summary">🍼 Estimulación temprana (0–3 años)</div>
+        </div>
+        <div class="more">
+          <p>Acompañamos el desarrollo comunicativo de los más pequeños desde sus primeros meses de vida, respetando su ritmo y potenciando sus capacidades.</p>
+          <p><strong>Trabajamos aspectos como:</strong></p>
+          <ul>
+            <li>Atención conjunta y contacto visual</li>
+            <li>Primeros gestos y sonidos</li>
+            <li>Comprensión del lenguaje</li>
+            <li>Juego y comunicación funcional</li>
+          </ul>
+          <p>Las sesiones se basan en el juego y en las rutinas diarias, y la familia participa activamente.</p>
+        </div>
+        <div class="toggle">+ más información</div>
+      </div>
+
+      <div class="card">
+        <div class="cardTop">
+          <img src="images/service-lenguaje.png" alt="Comunicación y lenguaje">
+          <div class="summary">🗣 Comunicación y lenguaje (a partir de 4 años)</div>
+        </div>
+        <div class="more">
+          <p>Intervención en dificultades del lenguaje oral y la comunicación, adaptada a cada niño y a sus necesidades.</p>
+          <p><strong>Este servicio está pensado para niños que presentan:</strong></p>
+          <ul>
+            <li>Retraso en el lenguaje</li>
+            <li>Trastorno del Desarrollo del Lenguaje (TEL)</li>
+            <li>Dificultades en la comprensión o expresión</li>
+            <li>Problemas para construir frases, ampliar vocabulario o contar experiencias</li>
+          </ul>
+          <p>Trabajamos de forma lúdica y funcional para favorecer una comunicación más clara y eficaz en casa y en la escuela.</p>
+        </div>
+        <div class="toggle">+ más información</div>
+      </div>
+
+      <div class="card">
+        <div class="cardTop">
+          <img src="images/service-articulacion.png" alt="Habla y articulación">
+          <div class="summary">🔤 Habla, fonemas y articulación</div>
+        </div>
+        <div class="more">
+          <p>Ayudamos a los niños a mejorar la pronunciación de los sonidos del habla de forma respetuosa y divertida.</p>
+          <p><strong>La intervención se centra en:</strong></p>
+          <ul>
+            <li>Conciencia y control de los movimientos orales</li>
+            <li>Producción correcta de los fonemas</li>
+            <li>Generalización del sonido en el habla espontánea</li>
+          </ul>
+          <p>Siempre a través de juegos y actividades motivadoras, evitando ejercicios repetitivos o forzados.</p>
+        </div>
+        <div class="toggle">+ más información</div>
+      </div>
+
+      <div class="card">
+        <div class="cardTop">
+          <img src="images/service-alimentacion.png" alt="Alimentación oral infantil">
+          <div class="summary">🍎 Alimentación oral infantil</div>
+        </div>
+        <div class="more">
+          <p>Acompañamiento en dificultades relacionadas con la alimentación, la masticación y la aceptación de alimentos.</p>
+          <p><strong>Trabajamos con niños que presentan:</strong></p>
+          <ul>
+            <li>Dificultades para masticar o tragar</li>
+            <li>Selectividad alimentaria</li>
+            <li>Rechazo de texturas o alimentos nuevos</li>
+            <li>Problemas en la transición a sólidos</li>
+          </ul>
+          <p>Enfoque respetuoso, gradual y centrado en el bienestar del niño, con pautas claras para aplicar en casa.</p>
+        </div>
+        <div class="toggle">+ más información</div>
+      </div>
+
+      <div class="card">
+        <div class="cardTop">
+          <img src="images/service-neurodiversidad.png" alt="Neurodiversidad">
+          <div class="summary">🌈 Acompañamiento en neurodiversidad</div>
+        </div>
+        <div class="more">
+          <p>Apoyo a niños con perfiles diversos de neurodesarrollo, respetando su forma única de comunicarse y relacionarse.</p>
+          <p><strong>Trabajamos:</strong></p>
+          <ul>
+            <li>Comunicación funcional</li>
+            <li>Interacción social</li>
+            <li>Comprensión del entorno</li>
+            <li>Regulación y autonomía</li>
+          </ul>
+          <p>El objetivo no es “normalizar”, sino potenciar la comunicación y el bienestar del niño, creando un entorno seguro y comprensivo.</p>
+        </div>
+        <div class="toggle">+ más información</div>
+      </div>
+
+      <div class="card">
+        <div class="cardTop">
+          <img src="images/service-familias.png" alt="Apoyo a familias">
+          <div class="summary">👨‍👩‍👧 Orientación y acompañamiento a familias</div>
+        </div>
+        <div class="more">
+          <p>Las familias son una parte fundamental del proceso terapéutico. Ofrezco orientación a madres, padres y cuidadores.</p>
+          <p><strong>Incluye:</strong></p>
+          <ul>
+            <li>Pautas prácticas para casa</li>
+            <li>Resolución de dudas</li>
+            <li>Acompañamiento emocional</li>
+            <li>Coordinación con otros profesionales (si es necesario)</li>
+          </ul>
+          <p>Cuando la familia entiende y participa, los avances son más significativos y duraderos.</p>
+        </div>
+        <div class="toggle">+ más información</div>
+      </div>
+
     </div>
   </div>
+</section>
 
-  <footer>
-    <div class="container">
-      <div class="links">
-        <a id="privLink" href="privacy.html">Privacidad</a>
-        <a id="legalLink" href="legal.html">Aviso legal</a>
-      </div>
-      <div id="rights" class="tiny">© Chit Chat. Todos los derechos reservados.</div>
+<section id="sobre" class="section">
+  <div class="container">
+    <h2>Sobre Chit Chat</h2>
+    <p>
+      Acompaño a niños y a sus familias en el desarrollo del habla, el lenguaje y la comunicación, desde un enfoque cercano,
+      respetuoso y basado en la evidencia científica. Mi objetivo es crear un espacio seguro y de confianza donde cada niño
+      pueda expresarse, aprender y crecer a su propio ritmo.
+    </p>
+    <p>
+      Hola, soy <strong>NOMBRE</strong> logopeda especializada en infancia, lenguaje y neurodesarrollo. Me gradué como logopeda
+      en Irlanda y soy bilingüe. Actualmente acompaño a familias en Zaragoza.
+    </p>
+  </div>
+</section>
+
+<section id="enfoque" class="section">
+  <div class="container">
+    <h2>Enfoque</h2>
+    <p><strong>Intervención respetuosa, basada en la evidencia y centrada en el niño y su familia.</strong></p>
+    <p>
+      Mi forma de trabajar se basa en la evidencia científica, el respeto al ritmo del niño y la colaboración activa con las familias.
+      Cada intervención es individualizada y se adapta a las necesidades, intereses y características de cada niño.
+    </p>
+    <p>
+      Estoy formada en los programas Hanen – It Takes Two to Talk y More Than Words, y cuento con un posgrado en disfagia.
+    </p>
+    <p>
+      Las sesiones son dinámicas y lúdicas, utilizando el juego como principal herramienta. Acompaño a las familias con pautas claras
+      y realistas para favorecer avances significativos y sostenibles.
+    </p>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="container">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <p><strong>¿A partir de qué edad atendéis?</strong><br>Desde bebés (0–3) con orientación familiar, hasta adolescentes.</p>
+      <p><strong>¿Hacéis sesiones online?</strong><br>Sí, según el caso. También ofrecemos material para casa.</p>
+      <p><strong>¿Cómo empiezo?</strong><br>Reserva una evaluación inicial y te diseñamos un plan.</p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="js/script.js"></script>
+<section id="contacto" class="section">
+  <div class="container">
+    <h2>Contacto</h2>
+    <p>Reserva una cita y te diseñamos un plan adaptado.</p>
+    <p>Email: hola@tusitio.com</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">© Chit Chat · Logopedia infantil</div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
