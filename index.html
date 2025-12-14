@@ -54,6 +54,10 @@
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contacto">Reserva una cita</a>
+            <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+            <a class="scroll-hint" href="#servicios" aria-label="Bajar a servicios">
+              <span class="scroll-dot" aria-hidden="true"></span>
+              <span>Desliza</span>
             </a>
           </div>
         </div>
@@ -78,7 +82,7 @@
         <div class="services-grid">
           <article class="service-card">
             <div class="service-top">
-              <img class="service-icon" src="images/neurodiversidad-s.png" alt="" />
+              <img class="service-icon" src="images/service-1.png" alt="" />
               <h3>Estimulación temprana (0–3 años)</h3>
             </div>
             <p class="service-preview">
@@ -107,7 +111,7 @@
 
           <article class="service-card">
             <div class="service-top">
-              <img class="service-icon" src="images/alimentacion-s.png" alt="" />
+              <img class="service-icon" src="images/service-2.png" alt="" />
               <h3>Comunicación y lenguaje (a partir de 4 años)</h3>
             </div>
             <p class="service-preview">
@@ -133,7 +137,7 @@
 
           <article class="service-card">
             <div class="service-top">
-              <img class="service-icon" src="images/articulacion-s.png" alt="" />
+              <img class="service-icon" src="images/service-3.png" alt="" />
               <h3>Habla, fonemas y articulación</h3>
             </div>
             <p class="service-preview">
@@ -161,7 +165,7 @@
 
           <article class="service-card">
             <div class="service-top">
-              <img class="service-icon" src="images/estimulacion-s.png" alt="" />
+              <img class="service-icon" src="images/service-4.png" alt="" />
               <h3>Alimentación oral infantil</h3>
             </div>
             <p class="service-preview">
@@ -187,7 +191,7 @@
 
           <article class="service-card">
             <div class="service-top">
-              <img class="service-icon" src="images/comunicacion-s.png" alt="" />
+              <img class="service-icon" src="images/service-5.png" alt="" />
               <h3>Acompañamiento en neurodiversidad</h3>
             </div>
             <p class="service-preview">
@@ -216,7 +220,7 @@
 
           <article class="service-card">
             <div class="service-top">
-              <img class="service-icon" src="images/familias-s.png" alt="" />
+              <img class="service-icon" src="images/service-6.png" alt="" />
               <h3>Orientación y acompañamiento a familias</h3>
             </div>
             <p class="service-preview">
@@ -258,9 +262,6 @@
             Hola, soy <strong>NOMBRE</strong>, logopeda especializada en infancia, lenguaje y neurodesarrollo. Trabajo principalmente con niños desde los primeros años de vida hasta la etapa escolar, acompañándolos en dificultades del habla, el lenguaje, la comunicación y la alimentación.
           </p>
           <p>
-            Mi vocación por la logopedia infantil nace del profundo interés por comprender cómo los niños se comunican y se relacionan con el mundo. Creo en la importancia del vínculo, del respeto y de la escucha, y en ofrecer un acompañamiento cercano tanto al niño como a su familia.
-          </p>
-          <p>
             Me gradué como logopeda en Irlanda y soy bilingüe, lo que me permite trabajar con una mirada sensible hacia el desarrollo del lenguaje en contextos bilingües. Actualmente acompaño a familias en Zaragoza, ofreciendo un espacio profesional, cálido y adaptado a cada niño.
           </p>
         </div>
@@ -268,20 +269,12 @@
         <div class="panel">
           <h3>Enfoque</h3>
           <p class="muted"><strong>Intervención respetuosa, basada en la evidencia y centrada en el niño y su familia.</strong></p>
-          <p class="muted">
-            Mi forma de trabajar se basa en la evidencia científica, el respeto al ritmo del niño y la colaboración activa con las familias. Cada intervención es individualizada y se adapta a las necesidades, intereses y características de cada niño.
-          </p>
-
           <ul class="bullets">
             <li>Programas Hanen: <em>It Takes Two to Talk</em> y <em>More Than Words</em></li>
             <li>Posgrado en disfagia (alimentación oral infantil)</li>
             <li>Sesiones dinámicas y lúdicas basadas en el juego</li>
             <li>Pautas claras y realistas para casa</li>
           </ul>
-
-          <p class="muted">
-            Mi objetivo es que cada niño se sienta comprendido, capaz y seguro, y que las familias se sientan acompañadas y confiadas durante todo el proceso.
-          </p>
         </div>
       </div>
     </section>
@@ -323,65 +316,60 @@
     </section>
 
     <!-- CONTACT -->
-    <form id="contactForm" class="contact-form panel" action="contact.php" method="POST" novalidate>
-  <div class="contact-form-head">
-    <h3>Contacto</h3>
-    <p class="muted">Cuéntame un poco y te respondo lo antes posible.</p>
-  </div>
+    <section class="section" id="contacto">
+      <div class="container contact">
+        <div>
+          <h2>Reserva una cita</h2>
+          <p>Escríbeme y te respondo lo antes posible.</p>
 
-  <!-- NEW: inline status -->
-  <div id="formStatus" class="form-status" role="status" aria-live="polite" hidden></div>
-
-  <!-- Honeypot -->
-  <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp">
-</form>
-
-
-  <!-- Honeypot (hidden field for bots) -->
-  <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp">
-
-  <div class="contact-form-grid">
-    <div class="form-field">
-      <label for="name">Nombre</label>
-      <input id="name" name="name" type="text" placeholder="Tu nombre" required>
-    </div>
-
-    <div class="form-field">
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required>
-    </div>
-
-    <div class="form-field form-field-full">
-      <label for="message">Mensaje</label>
-      <textarea id="message" name="message" rows="5" placeholder="¿En qué puedo ayudarte?" required></textarea>
-    </div>
-  </div>
-
-  <div class="contact-form-actions">
-    <button class="btn btn-primary" type="submit">
-      Enviar mensaje
-    </button>
-    <p class="muted">
-      Al enviar este formulario aceptas la <a href="privacy.html">política de privacidad</a>.
-    </p>
-  </div>
-</form>
-
-
+          <div class="contact-cards">
+            <a class="contact-card" href="mailto:tuemail@ejemplo.com">
+              <strong>Email</strong>
+              <span class="muted">tuemail@ejemplo.com</span>
+            </a>
+            <a class="contact-card" href="#" target="_blank" rel="noreferrer">
+              <strong>WhatsApp</strong>
+              <span class="muted">Añade tu enlace</span>
+            </a>
+          </div>
 
           <p class="muted legal-line">
             Consulta el <a href="legal.html">Aviso legal</a> y la <a href="privacy.html">Política de privacidad</a>.
           </p>
         </div>
 
-        <div class="panel">
-          <h3>Modalidad</h3>
-          <ul class="bullets">
-            <li>Atención en persona (Zaragoza)</li>
-            <li>Sesiones online (según el caso)</li>
-            <li>Material y pautas para casa</li>
-          </ul>
-        </div>
+        <form id="contactForm" class="contact-form panel" action="contact.php" method="POST" novalidate>
+          <div class="contact-form-head">
+            <h3>Contacto</h3>
+            <p class="muted">Cuéntame un poco y te respondo lo antes posible.</p>
+          </div>
+
+          <div id="formStatus" class="form-status" role="status" aria-live="polite" hidden></div>
+
+          <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp">
+
+          <div class="contact-form-grid">
+            <div class="form-field">
+              <label for="name">Nombre</label>
+              <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" placeholder="¿En qué puedo ayudarte?" required></textarea>
+            </div>
+          </div>
+
+          <div class="contact-form-actions">
+            <button class="btn btn-primary" type="submit">Enviar mensaje</button>
+            <p class="muted">Al enviar este formulario aceptas la <a href="privacy.html">política de privacidad</a>.</p>
+          </div>
+        </form>
       </div>
     </section>
   </main>
