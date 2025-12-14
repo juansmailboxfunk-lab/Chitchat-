@@ -1,11 +1,8 @@
-// ==============================
-// Services toggle (compat mode)
-// Supports BOTH:
-//  A) old:  .toggle button + previous sibling .more (display none/block)
-//  B) new:  .service-card .service-toggle + .service-more (smooth height)
-// ==============================
+// CHIT CHAT interactions
+// - Services: smooth open/close with label swap + accordion behaviour
+// - FAQ accordion
 
-// ---- B) NEW (smooth) ----
+// Services accordion
 document.querySelectorAll(".service-card").forEach((card) => {
   const btn = card.querySelector(".service-toggle");
   const more = card.querySelector(".service-more");
@@ -13,38 +10,51 @@ document.querySelectorAll(".service-card").forEach((card) => {
 
   if (!btn || !more) return;
 
-  // Make measurable
+  // Make measurable for height animation
   more.hidden = false;
 
-  const close = () => {
-    btn.setAttribute("aria-expanded", "false");
-    card.dataset.open = "false";
-    more.style.height = "0px";
-    more.style.opacity = "0";
-    if (text) text.textContent = "Más información";
+  const closeCard = (c) => {
+    const b = c.querySelector(".service-toggle");
+    const m = c.querySelector(".service-more");
+    const t = c.querySelector(".toggle-text");
+    if (!b || !m) return;
+    b.setAttribute("aria-expanded", "false");
+    c.dataset.open = "false";
+    m.style.height = "0px";
+    m.style.opacity = "0";
+    if (t) t.textContent = "Más información";
   };
 
-  const open = () => {
-    btn.setAttribute("aria-expanded", "true");
-    card.dataset.open = "true";
-    more.style.opacity = "1";
-    more.style.height = more.scrollHeight + "px";
-    if (text) text.textContent = "Menos información";
+  const openCard = (c) => {
+    const b = c.querySelector(".service-toggle");
+    const m = c.querySelector(".service-more");
+    const t = c.querySelector(".toggle-text");
+    if (!b || !m) return;
+    b.setAttribute("aria-expanded", "true");
+    c.dataset.open = "true";
+    m.style.opacity = "1";
+    m.style.height = m.scrollHeight + "px";
+    if (t) t.textContent = "Menos información";
   };
 
-  // Init closed unless already expanded
-  const isOpen = btn.getAttribute("aria-expanded") === "true";
-  if (isOpen) open(); else close();
+  // Init closed
+  closeCard(card);
 
   btn.addEventListener("click", () => {
     const opening = btn.getAttribute("aria-expanded") !== "true";
+
+    // Close others
+    document.querySelectorAll(".service-card").forEach((other) => {
+      if (other !== card) closeCard(other);
+    });
+
     if (opening) {
       more.style.height = "0px";
       more.style.opacity = "1";
-      requestAnimationFrame(open);
+      requestAnimationFrame(() => openCard(card));
     } else {
       more.style.height = more.scrollHeight + "px";
-      requestAnimationFrame(() => close());
+      requestAnimationFrame(() => closeCard(card));
     }
   });
 
@@ -55,37 +65,26 @@ document.querySelectorAll(".service-card").forEach((card) => {
   });
 });
 
-// ---- A) OLD (your current system, but safer) ----
-const toggles = document.querySelectorAll(".toggle");
-
-toggles.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const panel = btn.previousElementSibling; // assumes .more is right before button
-    if (!panel) return;
-
-    const isOpen = getComputedStyle(panel).display === "block";
-
-    // close all
-    document.querySelectorAll(".more").forEach((m) => (m.style.display = "none"));
-    toggles.forEach((t) => (t.textContent = "+ más información"));
-
-    // toggle current
-    panel.style.display = isOpen ? "none" : "block";
-    btn.textContent = isOpen ? "+ más información" : "– menos";
-  });
-});
-
-// ==============================
-// FAQ accordion (if present)
-// ==============================
+// FAQ accordion
 document.querySelectorAll("[data-accordion] .acc-btn").forEach((btn) => {
   btn.addEventListener("click", () => {
     const panel = btn.nextElementSibling;
     const expanded = btn.getAttribute("aria-expanded") === "true";
+
+    // close others
+    document.querySelectorAll("[data-accordion] .acc-btn").forEach((b) => {
+      if (b !== btn) {
+        b.setAttribute("aria-expanded", "false");
+        const p = b.nextElementSibling;
+        if (p) p.hidden = true;
+        const i = b.querySelector(".acc-icon");
+        if (i) i.textContent = "+";
+      }
+    });
+
     btn.setAttribute("aria-expanded", String(!expanded));
     panel.hidden = expanded;
     const icon = btn.querySelector(".acc-icon");
     if (icon) icon.textContent = expanded ? "+" : "–";
   });
 });
-

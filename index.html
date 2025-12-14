@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chit Chat — Logopedia para niños y familias</title>
-  <meta name="description" content="Chit Chat — Logopedia para niños y familias. Evaluación, intervención, asesoramiento y recursos." />
+  <meta name="description" content="Chit Chat — Logopedia para niños y familias. Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online." />
 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/style.css" />
@@ -13,7 +13,6 @@
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
 
-  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="./" aria-label="Chit Chat — Inicio">
@@ -26,7 +25,7 @@
 
       <nav class="nav" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
-        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#sobre">Sobre mí</a>
         <a href="#faq">Preguntas</a>
         <a class="btn btn-sm btn-primary" href="#contacto">Reserva una cita</a>
       </nav>
@@ -35,7 +34,7 @@
 
   <main id="main">
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="pill">Logopedia para niños y familias</p>
@@ -43,37 +42,31 @@
           <h1>Hablar, escuchar y decirlo con calma.</h1>
 
           <p class="lead">
-            Acompaño a peques y familias con evaluación, intervención y pautas claras.
-            Un enfoque cercano, profesional y basado en evidencia.
+            Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online.
           </p>
 
-          <div class="hero-badges" aria-label="Características principales">
-            <span class="badge">✔️ Objetivos medibles</span>
-            <span class="badge">✔️ Pautas para casa</span>
-            <span class="badge">✔️ Atención familiar</span>
+          <div class="hero-badges" aria-label="Características">
+            <span class="badge">Logopeda titulada</span>
+            <span class="badge">Atención a niños</span>
+            <span class="badge">Neurodiversidad</span>
+            <span class="badge">Apoyo a familias</span>
           </div>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contacto">Reserva una cita</a>
+            <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
+            <a class="scroll-hint" href="#servicios" aria-label="Bajar a servicios">
+              <span class="scroll-dot" aria-hidden="true"></span>
+              <span>Desliza</span>
             </a>
           </div>
         </div>
 
         <div class="hero-media" aria-label="Ilustración principal">
-          <img
-            src="images/hero.png"
-            alt="Familia y niños comunicándose con un enfoque cálido y positivo"
-            loading="eager"
-            decoding="async"
-          />
-
-          <!-- Speech bubbles (no need to be perfect — Nano Banana will fine-tune) -->
-         <!--   <div class="hero-bubbles" aria-hidden="true">
-            <span class="bubble b1">Papá</span>
-            <span class="bubble b2">Torre</span>
-            <span class="bubble b3">Más</span>
-            <span class="bubble b4">Bip Bip</span>
-          </div> -->
+          <img src="images/hero.png"
+               alt="Niños comunicándose en un entorno cálido y positivo"
+               loading="eager"
+               decoding="async" />
         </div>
       </div>
     </section>
@@ -82,181 +75,173 @@
     <section class="section" id="servicios">
       <div class="container">
         <div class="section-head">
-          <h2>Servicios</h2>
-          <p>Intervención adaptada a cada peque, con seguimiento y pautas para el día a día.</p>
+          <h2>¿Qué ofrecemos?</h2>
+          <p>Intervención adaptada a cada niño, con seguimiento y pautas claras para el día a día.</p>
         </div>
 
         <div class="services-grid">
-          <!-- 1 -->
-          <article class="service-card" id="servicio-estimulacion">
+          <article class="service-card">
             <div class="service-top">
-              <img src="images/service-1.png" alt="" class="service-icon" />
-              <h3>Estimulación temprana (0–3)</h3>
+              <img class="service-icon" src="images/service-1.png" alt="" />
+              <h3>Estimulación temprana (0–3 años)</h3>
             </div>
-
-            <!-- REQUIRED: only this paragraph visible by default -->
             <p class="service-preview">
-              Apoyamos el desarrollo comunicativo desde los primeros años, reforzando intención comunicativa, juego, atención conjunta y primeras palabras, potenciando sus capacidades.
+              Acompañamos el desarrollo comunicativo de los más pequeños desde sus primeros meses de vida, respetando su ritmo y potenciando sus capacidades.
             </p>
-
             <div class="service-more" hidden>
               <p>
-                Trabajamos con rutinas cotidianas y actividades breves para que la familia pueda repetirlas en casa.
-                Observamos señales tempranas, ajustamos objetivos y priorizamos lo funcional: pedir, elegir, señalar, imitar y turnarse.
+                La estimulación temprana está dirigida a bebés y niños pequeños que presentan retrasos en el desarrollo del lenguaje, la comunicación o la interacción, o que simplemente necesitan un pequeño empujón para desarrollar todo su potencial.
               </p>
+              <p><strong>Trabajamos aspectos como:</strong></p>
               <ul class="bullets">
-                <li>Juego guiado y comunicación prelingüística</li>
-                <li>Rutinas: comida, baño, cuentos</li>
-                <li>Pautas claras para casa</li>
+                <li>Atención conjunta y contacto visual</li>
+                <li>Primeros gestos y sonidos</li>
+                <li>Comprensión del lenguaje</li>
+                <li>Juego y comunicación funcional</li>
               </ul>
+              <p class="muted">
+                Las sesiones se basan en el juego y en las rutinas diarias, y la familia participa activamente, aprendiendo cómo favorecer la comunicación en el día a día.
+              </p>
             </div>
-
-            <button class="service-toggle" type="button" aria-expanded="false" aria-controls="more-1">
+            <button class="service-toggle" type="button" aria-expanded="false">
               <span class="toggle-icon" aria-hidden="true">+</span>
               <span class="toggle-text">Más información</span>
             </button>
           </article>
 
-          <!-- 2 -->
-          <article class="service-card" id="servicio-lenguaje">
+          <article class="service-card">
             <div class="service-top">
-              <img src="images/service-2.png" alt="" class="service-icon" />
-              <h3>Comunicación y lenguaje (4+)</h3>
+              <img class="service-icon" src="images/service-2.png" alt="" />
+              <h3>Comunicación y lenguaje (a partir de 4 años)</h3>
             </div>
-
             <p class="service-preview">
-              Reforzamos vocabulario, comprensión, narración y habilidades conversacionales con estrategias claras y actividades motivadoras, potenciando sus capacidades.
+              Intervención en dificultades del lenguaje oral y la comunicación, adaptada a cada niño y a sus necesidades.
             </p>
-
             <div class="service-more" hidden>
-              <p>
-                Diseñamos objetivos observables (por ejemplo, “pedir ayuda con una frase”, “contar un suceso en 3 pasos”).
-                Integrando juego, historias, tarjetas visuales y apoyos.
-              </p>
+              <p><strong>Este servicio está pensado para niños que presentan:</strong></p>
               <ul class="bullets">
-                <li>Comprensión y expresión</li>
-                <li>Pragmática: turnos, mirar, preguntar</li>
-                <li>Estrategias para aula y casa</li>
+                <li>Retraso en el lenguaje</li>
+                <li>Trastorno del Desarrollo del Lenguaje (TDL / TEL)</li>
+                <li>Dificultades en la comprensión o expresión</li>
+                <li>Problemas para construir frases, ampliar vocabulario o contar experiencias</li>
               </ul>
+              <p class="muted">
+                Trabajamos de forma lúdica y funcional para que el niño se sienta seguro y motivado, favoreciendo una comunicación más clara y eficaz tanto en casa como en el entorno escolar.
+              </p>
             </div>
-
-            <button class="service-toggle" type="button" aria-expanded="false" aria-controls="more-2">
+            <button class="service-toggle" type="button" aria-expanded="false">
               <span class="toggle-icon" aria-hidden="true">+</span>
               <span class="toggle-text">Más información</span>
             </button>
           </article>
 
-          <!-- 3 -->
-          <article class="service-card" id="servicio-habla">
+          <article class="service-card">
             <div class="service-top">
-              <img src="images/service-3.png" alt="" class="service-icon" />
+              <img class="service-icon" src="images/service-3.png" alt="" />
               <h3>Habla, fonemas y articulación</h3>
             </div>
-
             <p class="service-preview">
-              Mejoramos la inteligibilidad con un plan progresivo: sonido, sílaba, palabra y conversación, potenciando sus capacidades.
+              Ayudamos a los niños a mejorar la pronunciación de los sonidos del habla de forma respetuosa y divertida.
             </p>
-
             <div class="service-more" hidden>
               <p>
-                Usamos práctica breve y frecuente, con señales claras (visual, auditiva y táctil si procede).
-                La meta es que el niño se entienda mejor en su vida real.
+                Algunos niños tienen dificultades para pronunciar ciertos sonidos (como la /r/, /s/, /l/, /k/…), lo que puede afectar a su inteligibilidad y confianza al hablar.
               </p>
+              <p><strong>La intervención se centra en:</strong></p>
               <ul class="bullets">
-                <li>Fonemas y procesos fonológicos</li>
-                <li>Respiración y coordinación</li>
-                <li>Generalización a conversación</li>
+                <li>Conciencia y control de los movimientos orales</li>
+                <li>Producción correcta de los fonemas</li>
+                <li>Generalización del sonido en el habla espontánea</li>
               </ul>
+              <p class="muted">
+                Siempre a través de juegos y actividades motivadoras, evitando ejercicios repetitivos o forzados.
+              </p>
             </div>
-
-            <button class="service-toggle" type="button" aria-expanded="false" aria-controls="more-3">
+            <button class="service-toggle" type="button" aria-expanded="false">
               <span class="toggle-icon" aria-hidden="true">+</span>
               <span class="toggle-text">Más información</span>
             </button>
           </article>
 
-          <!-- 4 -->
-          <article class="service-card" id="servicio-alimentacion">
+          <article class="service-card">
             <div class="service-top">
-              <img src="images/service-4.png" alt="" class="service-icon" />
+              <img class="service-icon" src="images/service-4.png" alt="" />
               <h3>Alimentación oral infantil</h3>
             </div>
-
             <p class="service-preview">
-              Acompañamos dificultades con texturas, masticación y aceptación alimentaria con un plan respetuoso, potenciando sus capacidades.
+              Acompañamiento en dificultades relacionadas con la alimentación, la masticación y la aceptación de alimentos.
             </p>
-
             <div class="service-more" hidden>
-              <p>
-                Priorizamos seguridad, progresión por pasos y coordinación con la familia.
-                Evaluamos hábitos, postura, ritmo y señales de estrés durante la comida.
-              </p>
+              <p><strong>Trabajamos con niños que presentan:</strong></p>
               <ul class="bullets">
-                <li>Texturas y progresión</li>
-                <li>Masticación y coordinación</li>
-                <li>Pautas para casa</li>
+                <li>Dificultades para masticar o tragar</li>
+                <li>Selectividad alimentaria</li>
+                <li>Rechazo de texturas o alimentos nuevos</li>
+                <li>Problemas en la transición a sólidos</li>
               </ul>
+              <p class="muted">
+                El enfoque es respetuoso, gradual y centrado en el bienestar del niño, sin forzar ni generar experiencias negativas con la comida. La familia recibe pautas claras para aplicar en casa y avanzar de forma segura.
+              </p>
             </div>
-
-            <button class="service-toggle" type="button" aria-expanded="false" aria-controls="more-4">
+            <button class="service-toggle" type="button" aria-expanded="false">
               <span class="toggle-icon" aria-hidden="true">+</span>
               <span class="toggle-text">Más información</span>
             </button>
           </article>
 
-          <!-- 5 -->
-          <article class="service-card" id="servicio-neurodiversidad">
+          <article class="service-card">
             <div class="service-top">
-              <img src="images/service-5.png" alt="" class="service-icon" />
-              <h3>Neurodiversidad</h3>
+              <img class="service-icon" src="images/service-5.png" alt="" />
+              <h3>Acompañamiento en neurodiversidad</h3>
             </div>
-
             <p class="service-preview">
-              Intervención centrada en comunicación funcional, apoyos visuales y autorregulación, potenciando sus capacidades.
+              Apoyo a niños con perfiles diversos de neurodesarrollo, respetando su forma única de comunicarse y relacionarse.
             </p>
-
             <div class="service-more" hidden>
               <p>
-                Adaptamos materiales, reducimos carga sensorial y trabajamos en coordinación con la familia.
-                Objetivos realistas y medibles, siempre respetando el ritmo del niño.
+                Acompaño a niños dentro del espectro del autismo y otras neurodiversidades, adaptando la intervención a sus fortalezas, intereses y estilo comunicativo.
               </p>
+              <p><strong>Trabajamos:</strong></p>
               <ul class="bullets">
-                <li>Apoyos visuales y rutinas</li>
                 <li>Comunicación funcional</li>
-                <li>Trabajo con familia y entorno</li>
+                <li>Interacción social</li>
+                <li>Comprensión del entorno</li>
+                <li>Regulación y autonomía</li>
               </ul>
+              <p class="muted">
+                El objetivo no es “normalizar”, sino potenciar la comunicación y el bienestar del niño, creando un entorno seguro y comprensivo.
+              </p>
             </div>
-
-            <button class="service-toggle" type="button" aria-expanded="false" aria-controls="more-5">
+            <button class="service-toggle" type="button" aria-expanded="false">
               <span class="toggle-icon" aria-hidden="true">+</span>
               <span class="toggle-text">Más información</span>
             </button>
           </article>
 
-          <!-- 6 -->
-          <article class="service-card" id="servicio-familias">
+          <article class="service-card">
             <div class="service-top">
-              <img src="images/service-6.png" alt="" class="service-icon" />
-              <h3>Orientación a familias</h3>
+              <img class="service-icon" src="images/service-6.png" alt="" />
+              <h3>Orientación y acompañamiento a familias</h3>
             </div>
-
             <p class="service-preview">
-              Te doy pautas concretas para casa y escuela: qué decir, cómo esperar y cómo reforzar, potenciando sus capacidades.
+              Las familias son una parte fundamental del proceso terapéutico.
             </p>
-
             <div class="service-more" hidden>
               <p>
-                Ajustamos estrategias según situación real: rutinas, juego, pantallas, hermanos, colegio.
-                Pautas simples, consistentes y fáciles de aplicar.
+                Ofrezco orientación a madres, padres y cuidadores para que se sientan seguros y acompañados en el desarrollo de su hijo.
               </p>
+              <p><strong>Incluye:</strong></p>
               <ul class="bullets">
-                <li>Estrategias de interacción</li>
-                <li>Rutinas comunicativas</li>
-                <li>Seguimiento y ajustes</li>
+                <li>Pautas prácticas para casa</li>
+                <li>Resolución de dudas</li>
+                <li>Acompañamiento emocional</li>
+                <li>Coordinación con otros profesionales (si es necesario)</li>
               </ul>
+              <p class="muted">
+                Creo firmemente que cuando la familia entiende y participa, los avances son más significativos y duraderos.
+              </p>
             </div>
-
-            <button class="service-toggle" type="button" aria-expanded="false" aria-controls="more-6">
+            <button class="service-toggle" type="button" aria-expanded="false">
               <span class="toggle-icon" aria-hidden="true">+</span>
               <span class="toggle-text">Más información</span>
             </button>
@@ -266,38 +251,41 @@
     </section>
 
     <!-- ABOUT -->
-    <section class="section" id="sobre-mi">
+    <section class="section" id="sobre">
       <div class="container split">
         <div>
-          <h2>Sobre mí</h2>
+          <h2>Sobre Chit Chat</h2>
           <p>
-            Soy logopeda y trabajo con niños y familias, creando un espacio seguro donde la comunicación
-            se construye paso a paso.
+            Acompaño a niños y a sus familias en el desarrollo del habla, el lenguaje y la comunicación, desde un enfoque cercano, respetuoso y basado en la evidencia científica. Mi objetivo es crear un espacio seguro y de confianza donde cada niño pueda expresarse, aprender y crecer a su propio ritmo.
           </p>
-          <p class="muted">
-            (Añade aquí tu formación, experiencia, idiomas y modalidad de atención.)
+          <p>
+            Hola, soy <strong>NOMBRE</strong>, logopeda especializada en infancia, lenguaje y neurodesarrollo. Trabajo principalmente con niños desde los primeros años de vida hasta la etapa escolar, acompañándolos en dificultades del habla, el lenguaje, la comunicación y la alimentación.
           </p>
-
-          <div class="mini-cards">
-            <div class="mini-card">
-              <strong>Enfoque</strong>
-              <span class="muted">Calma, evidencia, objetivos claros</span>
-            </div>
-            <div class="mini-card">
-              <strong>Familia</strong>
-              <span class="muted">Pautas prácticas para casa</span>
-            </div>
-          </div>
+          <p>
+            Mi vocación por la logopedia infantil nace del profundo interés por comprender cómo los niños se comunican y se relacionan con el mundo. Creo en la importancia del vínculo, del respeto y de la escucha, y en ofrecer un acompañamiento cercano tanto al niño como a su familia.
+          </p>
+          <p>
+            Me gradué como logopeda en Irlanda y soy bilingüe, lo que me permite trabajar con una mirada sensible hacia el desarrollo del lenguaje en contextos bilingües. Actualmente acompaño a familias en Zaragoza, ofreciendo un espacio profesional, cálido y adaptado a cada niño.
+          </p>
         </div>
 
         <div class="panel">
-          <h3>Cómo trabajamos</h3>
-          <ol class="steps">
-            <li><strong>1.</strong> Primera consulta</li>
-            <li><strong>2.</strong> Evaluación + objetivos</li>
-            <li><strong>3.</strong> Sesiones + pautas</li>
-            <li><strong>4.</strong> Revisión y ajustes</li>
-          </ol>
+          <h3>Enfoque</h3>
+          <p class="muted"><strong>Intervención respetuosa, basada en la evidencia y centrada en el niño y su familia.</strong></p>
+          <p class="muted">
+            Mi forma de trabajar se basa en la evidencia científica, el respeto al ritmo del niño y la colaboración activa con las familias. Cada intervención es individualizada y se adapta a las necesidades, intereses y características de cada niño.
+          </p>
+
+          <ul class="bullets">
+            <li>Programas Hanen: <em>It Takes Two to Talk</em> y <em>More Than Words</em></li>
+            <li>Posgrado en disfagia (alimentación oral infantil)</li>
+            <li>Sesiones dinámicas y lúdicas basadas en el juego</li>
+            <li>Pautas claras y realistas para casa</li>
+          </ul>
+
+          <p class="muted">
+            Mi objetivo es que cada niño se sienta comprendido, capaz y seguro, y que las familias se sientan acompañadas y confiadas durante todo el proceso.
+          </p>
         </div>
       </div>
     </section>
@@ -307,24 +295,32 @@
       <div class="container">
         <div class="section-head">
           <h2>Preguntas frecuentes</h2>
-          <p>Respuestas rápidas. Si quieres, luego refinamos el contenido y el tono.</p>
+          <p>Respuestas rápidas para empezar con tranquilidad.</p>
         </div>
 
         <div class="accordion" data-accordion>
           <button class="acc-btn" aria-expanded="false">
-            ¿Cuándo es recomendable consultar?
+            ¿A partir de qué edad atendéis?
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
           <div class="acc-panel" hidden>
-            <p>Cuando notes dificultades en habla, lenguaje, voz, deglución o comunicación.</p>
+            <p>Desde bebés (0–3) con orientación familiar, hasta adolescentes.</p>
           </div>
 
           <button class="acc-btn" aria-expanded="false">
-            ¿Cómo son las sesiones?
+            ¿Hacéis sesiones online?
             <span class="acc-icon" aria-hidden="true">+</span>
           </button>
           <div class="acc-panel" hidden>
-            <p>Dinámicas, estructuradas y adaptadas a la edad, objetivos y motivación.</p>
+            <p>Sí, según el caso. También ofrecemos material para casa.</p>
+          </div>
+
+          <button class="acc-btn" aria-expanded="false">
+            ¿Cómo empiezo?
+            <span class="acc-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="acc-panel" hidden>
+            <p>Reserva una evaluación inicial y te diseñamos un plan.</p>
           </div>
         </div>
       </div>
@@ -334,7 +330,7 @@
     <section class="section" id="contacto">
       <div class="container contact">
         <div>
-          <h2>Contacto</h2>
+          <h2>Reserva una cita</h2>
           <p>Escríbeme y te respondo lo antes posible.</p>
 
           <div class="contact-cards">
@@ -354,14 +350,17 @@
         </div>
 
         <div class="panel">
-          <h3>Horarios</h3>
-          <p class="muted">Añade tu disponibilidad (mañanas / tardes) y zona o modalidad (presencial/online).</p>
+          <h3>Modalidad</h3>
+          <ul class="bullets">
+            <li>Atención en persona (Zaragoza)</li>
+            <li>Sesiones online (según el caso)</li>
+            <li>Material y pautas para casa</li>
+          </ul>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p class="muted">© <span id="year"></span> Chit Chat</p>
@@ -373,82 +372,6 @@
   </footer>
 
   <script src="js/script.js"></script>
-
-  <!-- Inline enhancement: services + faq toggles (safe even if script.js already has logic) -->
-  <script>
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // SERVICES smooth accordion
-    document.querySelectorAll(".service-card").forEach((card) => {
-      const btn = card.querySelector(".service-toggle");
-      const more = card.querySelector(".service-more");
-      const text = card.querySelector(".toggle-text");
-      if (!btn || !more || !text) return;
-
-      // Make measurable
-      more.hidden = false;
-
-      const setClosed = () => {
-        btn.setAttribute("aria-expanded", "false");
-        card.dataset.open = "false";
-        more.style.height = "0px";
-        more.style.opacity = "0";
-        text.textContent = "Más información";
-      };
-
-      const setOpen = () => {
-        btn.setAttribute("aria-expanded", "true");
-        card.dataset.open = "true";
-        more.style.opacity = "1";
-        more.style.height = more.scrollHeight + "px";
-        text.textContent = "Menos información";
-      };
-
-      // Init closed
-      setClosed();
-
-      btn.addEventListener("click", () => {
-        const opening = btn.getAttribute("aria-expanded") !== "true";
-        if (opening) {
-          // 0 -> height
-          more.style.height = "0px";
-          more.style.opacity = "1";
-          requestAnimationFrame(() => setOpen());
-        } else {
-          // height -> 0
-          more.style.height = more.scrollHeight + "px";
-          requestAnimationFrame(() => {
-            more.style.height = "0px";
-            more.style.opacity = "0";
-            btn.setAttribute("aria-expanded", "false");
-            card.dataset.open = "false";
-            text.textContent = "Más información";
-          });
-        }
-      });
-
-      window.addEventListener("resize", () => {
-        if (card.dataset.open === "true") {
-          more.style.height = more.scrollHeight + "px";
-        }
-      });
-    });
-
-    // FAQ accordion (simple)
-    document.querySelectorAll("[data-accordion] .acc-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const panel = btn.nextElementSibling;
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        btn.setAttribute("aria-expanded", String(!expanded));
-        panel.hidden = expanded;
-        const icon = btn.querySelector(".acc-icon");
-        if (icon) icon.textContent = expanded ? "+" : "–";
-      });
-    });
-  </script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
-
-
