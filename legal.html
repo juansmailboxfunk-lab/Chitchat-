@@ -1,6 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aviso legal — Chit Chat</title>
+  <meta name="description" content="Aviso legal de Chit Chat — Logopedia para niños y familias." />
 
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aviso legal — Chit Chat</title><link rel="icon" href="images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css"></head>
-<body><header class="topbar"><div class="container inner"><div class="brand"><a href="index.html" class="name">← Chit Chat</a></div></div></header>
-<section class="section"><div class="container"><h2>Aviso legal</h2><p class="lead">Texto de ejemplo. Sustituir por el aviso legal definitivo.</p><div class="feature"><p>Responsable, contacto y condiciones de uso del sitio.</p></div></div></section>
-</body></html>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="Chit Chat — Inicio">
+        <img src="images/logo.svg" alt="Chit Chat" class="brand-logo" />
+        <span class="brand-text">
+          <strong>Chit Chat</strong>
+          <span>Logopedia</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="./#servicios">Servicios</a>
+        <a href="./#sobre">Sobre mí</a>
+        <a href="./#faq">Preguntas</a>
+        <a class="btn btn-sm btn-primary" href="./#contacto">Reserva una cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container split">
+        <div>
+          <h1>Aviso legal</h1>
+          <p class="muted">Información general sobre este sitio web. Sustituye los campos marcados si lo necesitas.</p>
+
+          <h2>1. Titularidad del sitio web</h2>
+          <p><strong>Titular:</strong> NOMBRE Y APELLIDOS / Chit Chat</p>
+          <p><strong>Profesión:</strong> Logopeda</p>
+          <p><strong>Dirección profesional:</strong> Zaragoza (añadir dirección si procede)</p>
+          <p><strong>Email de contacto:</strong> tuemail@ejemplo.com</p>
+
+          <h2>2. Condiciones de uso</h2>
+          <p>
+            El acceso y uso de este sitio web atribuye la condición de usuario e implica la aceptación de las presentes condiciones.
+            El usuario se compromete a hacer un uso adecuado de los contenidos y servicios, y a no emplearlos para actividades ilícitas,
+            contrarias a la buena fe o al orden público.
+          </p>
+
+          <h2>3. Propiedad intelectual e industrial</h2>
+          <p>
+            Los contenidos de este sitio (textos, imágenes, diseño, logotipos) están protegidos por derechos de propiedad intelectual e industrial.
+            Queda prohibida su reproducción, distribución o comunicación pública sin autorización, salvo en los casos permitidos por la ley.
+          </p>
+
+          <h2>4. Responsabilidad</h2>
+          <p>
+            La titular no se hace responsable del mal uso que se realice de los contenidos del sitio ni de los daños derivados del acceso o uso
+            de la información. Este sitio puede incluir enlaces a sitios de terceros, cuya información y políticas son responsabilidad de sus titulares.
+          </p>
+
+          <h2>5. Legislación aplicable</h2>
+          <p>
+            Las presentes condiciones se rigen por la legislación española. Para cualquier controversia, las partes se someterán a los juzgados y tribunales
+            competentes conforme a la normativa aplicable.
+          </p>
+        </div>
+
+        <aside class="panel">
+          <h3>Enlaces</h3>
+          <ul class="bullets">
+            <li><a href="privacy.html">Política de privacidad</a></li>
+            <li><a href="./#contacto">Reserva una cita</a></li>
+          </ul>
+
+          <p class="muted">
+            Consejo: si vas a ofrecer servicios sanitarios o datos de salud, revisa este texto con un profesional legal para adaptarlo a tu caso.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> Chit Chat</p>
+      <div class="footer-links">
+        <a href="legal.html">Aviso legal</a>
+        <a href="privacy.html">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

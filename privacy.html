@@ -1,6 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de privacidad — Chit Chat</title>
+  <meta name="description" content="Política de privacidad de Chit Chat — Logopedia para niños y familias." />
 
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacidad — Chit Chat</title><link rel="icon" href="images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css"></head>
-<body><header class="topbar"><div class="container inner"><div class="brand"><a href="index.html" class="name">← Chit Chat</a></div></div></header>
-<section class="section"><div class="container"><h2>Privacidad</h2><p class="lead">Página de ejemplo. Sustituye por tu política real.</p><div class="feature"><p>Recopilamos la información necesaria para responder a tus consultas. El formulario usa Formspree. Usamos analíticas ligeras sin cookies (opcional con tu consentimiento).</p></div></div></section>
-</body></html>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="Chit Chat — Inicio">
+        <img src="images/logo.svg" alt="Chit Chat" class="brand-logo" />
+        <span class="brand-text">
+          <strong>Chit Chat</strong>
+          <span>Logopedia</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="./#servicios">Servicios</a>
+        <a href="./#sobre">Sobre mí</a>
+        <a href="./#faq">Preguntas</a>
+        <a class="btn btn-sm btn-primary" href="./#contacto">Reserva una cita</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container split">
+        <div>
+          <h1>Política de privacidad</h1>
+          <p class="muted">Resumen claro sobre cómo se gestionan los datos. Ajusta los apartados según tus herramientas (formularios, analytics, etc.).</p>
+
+          <h2>1. Responsable del tratamiento</h2>
+          <p><strong>Responsable:</strong> NOMBRE Y APELLIDOS / Chit Chat</p>
+          <p><strong>Email:</strong> tuemail@ejemplo.com</p>
+          <p><strong>Ubicación:</strong> Zaragoza, España</p>
+
+          <h2>2. Datos que se pueden recopilar</h2>
+          <ul class="bullets">
+            <li>Datos de contacto (por ejemplo: nombre, email, teléfono), si nos los proporcionas.</li>
+            <li>Información que incluyas en tu mensaje (motivo de consulta, disponibilidad, etc.).</li>
+            <li>Datos técnicos mínimos (por ejemplo: dirección IP) necesarios para el funcionamiento del sitio.</li>
+          </ul>
+
+          <h2>3. Finalidad</h2>
+          <ul class="bullets">
+            <li>Responder a consultas y solicitudes de cita.</li>
+            <li>Gestionar la comunicación contigo.</li>
+            <li>Mejorar el sitio y la experiencia de usuario (solo si se activan herramientas de analítica).</li>
+          </ul>
+
+          <h2>4. Base legal</h2>
+          <ul class="bullets">
+            <li>Tu consentimiento al enviar un formulario o contactar por email/WhatsApp.</li>
+            <li>Interés legítimo para responder a solicitudes y mantener comunicación profesional.</li>
+            <li>Cumplimiento de obligaciones legales cuando corresponda.</li>
+          </ul>
+
+          <h2>5. Conservación</h2>
+          <p>
+            Conservaremos tus datos el tiempo necesario para atender tu solicitud y, en su caso, durante los plazos exigidos por normativa aplicable.
+            Puedes solicitar la eliminación cuando proceda.
+          </p>
+
+          <h2>6. Cesión a terceros</h2>
+          <p>
+            No cedemos tus datos a terceros salvo obligación legal o cuando sea imprescindible para prestarte el servicio (por ejemplo, proveedores técnicos).
+            Si utilizas herramientas externas (Formspree, Google Forms, WhatsApp, etc.), revisa también sus políticas.
+          </p>
+
+          <h2>7. Derechos</h2>
+          <p>
+            Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad enviando un email a
+            <strong>tuemail@ejemplo.com</strong>.
+          </p>
+
+          <h2>8. Cookies</h2>
+          <p>
+            Este sitio puede usar cookies técnicas necesarias para su funcionamiento. Si añades analítica o embeds, puede ser necesario informar y/o
+            solicitar consentimiento según normativa. (Añadir banner si aplica.)
+          </p>
+
+          <h2>9. Cambios en esta política</h2>
+          <p>
+            Podremos actualizar esta política para reflejar cambios legales o técnicos. La versión vigente estará siempre publicada en esta página.
+          </p>
+        </div>
+
+        <aside class="panel">
+          <h3>Enlaces</h3>
+          <ul class="bullets">
+            <li><a href="legal.html">Aviso legal</a></li>
+            <li><a href="./#contacto">Reserva una cita</a></li>
+          </ul>
+
+          <p class="muted">
+            Si empiezas a usar un formulario (Formspree/Google Forms) o analítica, dímelo y te adapto esta página exactamente a tu configuración.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> Chit Chat</p>
+      <div class="footer-links">
+        <a href="legal.html">Aviso legal</a>
+        <a href="privacy.html">Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
