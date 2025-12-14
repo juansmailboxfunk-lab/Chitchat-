@@ -323,22 +323,36 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section" id="contacto">
-      <div class="container contact">
-        <div>
-          <h2>Reserva una cita</h2>
-          <p>Escríbeme y te respondo lo antes posible.</p>
+    <form class="panel" action="contact.php" method="POST" novalidate>
+  <h3>Contacto</h3>
 
-          <div class="contact-cards">
-            <a class="contact-card" href="mailto:tuemail@ejemplo.com">
-              <strong>Email</strong>
-              <span class="muted">tuemail@ejemplo.com</span>
-            </a>
-            <a class="contact-card" href="#" target="_blank" rel="noreferrer">
-              <strong>WhatsApp</strong>
-              <span class="muted">Añade tu enlace</span>
-            </a>
-          </div>
+  <!-- Honeypot (hidden field for bots) -->
+  <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
+
+  <div class="form-field">
+    <label for="name">Nombre</label>
+    <input id="name" name="name" type="text" required>
+  </div>
+
+  <div class="form-field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
+  </div>
+
+  <div class="form-field">
+    <label for="message">Mensaje</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+  </div>
+
+  <button class="btn btn-primary" type="submit">
+    Enviar mensaje
+  </button>
+
+  <p class="muted" style="margin-top:10px">
+    Al enviar este formulario aceptas la <a href="privacy.html">política de privacidad</a>.
+  </p>
+</form>
+
 
           <p class="muted legal-line">
             Consulta el <a href="legal.html">Aviso legal</a> y la <a href="privacy.html">Política de privacidad</a>.
