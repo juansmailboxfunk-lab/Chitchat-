@@ -605,3 +605,39 @@ main > section{ padding-inline: 12px; }
 .form-field textarea:invalid{
   /* keep subtle by default (browser may show) */
 }
+
+/* Inline form status */
+.form-status{
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 10px 22px rgba(0,0,0,.04);
+  margin-top: 10px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.form-status.success{
+  border-color: rgba(34,197,94,.35);
+  background: rgba(34,197,94,.08);
+  color: #166534;
+}
+
+.form-status.error{
+  border-color: rgba(239,68,68,.35);
+  background: rgba(239,68,68,.08);
+  color: #7f1d1d;
+}
+
+.form-status.loading{
+  border-color: rgba(192,132,252,.35);
+  background: rgba(192,132,252,.08);
+  color: #4c1d95;
+}
+
+/* Optional: disable button look while sending */
+.btn[aria-busy="true"]{
+  opacity: .75;
+  cursor: wait;
+}
