@@ -21,6 +21,10 @@ document.querySelectorAll(".service-card").forEach((card) => {
     if (!b || !m) return;
     b.setAttribute("aria-expanded", "false");
     c.dataset.open = "false";
+    // Desktop: remove horizontal expand + dim state
+    c.classList.remove("expanded", "align-right");
+    const grid = c.closest(".services-grid");
+    if (grid && !grid.querySelector(".service-card.expanded")) grid.classList.remove("has-expanded");
     m.style.height = "0px";
     m.style.opacity = "0";
     if (t) t.textContent = "Más información";
@@ -33,6 +37,22 @@ document.querySelectorAll(".service-card").forEach((card) => {
     if (!b || !m) return;
     b.setAttribute("aria-expanded", "true");
     c.dataset.open = "true";
+    // Desktop: horizontal expand (~66%), dim others, and auto-scroll
+    const grid = c.closest(".services-grid");
+    const desktop = window.matchMedia("(min-width: 920px)").matches;
+    if (desktop) {
+      c.classList.add("expanded");
+      if (grid) {
+        grid.classList.add("has-expanded");
+        const idx = Array.from(grid.children).indexOf(c);
+        if ((idx % 3) !== 0) c.classList.add("align-right");
+        else c.classList.remove("align-right");
+      }
+      setTimeout(() => {
+        c.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        window.scrollBy({ top: -90, left: 0, behavior: "smooth" });
+      }, 120);
+    }
     m.style.opacity = "1";
     m.style.height = m.scrollHeight + "px";
     if (t) t.textContent = "Menos información";
