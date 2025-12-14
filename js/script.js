@@ -88,3 +88,70 @@ document.querySelectorAll("[data-accordion] .acc-btn").forEach((btn) => {
     if (icon) icon.textContent = expanded ? "+" : "–";
   });
 });
+
+// Inline contact form submit (AJAX)
+(() => {
+  const form = document.getElementById("contactForm");
+  const statusEl = document.getElementById("formStatus");
+  if (!form || !statusEl) return;
+
+  const btn = form.querySelector('button[type="submit"]');
+
+  const showStatus = (msg, type) => {
+    statusEl.hidden = false;
+    statusEl.className = `form-status ${type}`;
+    statusEl.textContent = msg;
+  };
+
+  const clearStatus = () => {
+    statusEl.hidden = true;
+    statusEl.className = "form-status";
+    statusEl.textContent = "";
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    clearStatus();
+
+    // Basic client-side validation
+    const name = form.querySelector("#name");
+    const email = form.querySelector("#email");
+    const message = form.querySelector("#message");
+    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+      showStatus("Por favor, completa nombre, email y mensaje.", "error");
+      return;
+    }
+
+    // Loading state
+    if (btn) {
+      btn.setAttribute("aria-busy", "true");
+      btn.disabled = true;
+    }
+    showStatus("Enviando…", "loading");
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "text/plain" }
+      });
+
+      const text = (await res.text()).trim();
+
+      if (res.ok) {
+        showStatus(text || "Gracias. Tu mensaje se ha enviado correctamente.", "success");
+        form.reset();
+      } else {
+        showStatus(text || "No se pudo enviar el mensaje. Inténtalo más tarde.", "error");
+      }
+    } catch (err) {
+      showStatus("Error de conexión. Revisa tu internet y vuelve a intentarlo.", "error");
+    } finally {
+      if (btn) {
+        btn.removeAttribute("aria-busy");
+        btn.disabled = false;
+      }
+    }
+  });
+})();
