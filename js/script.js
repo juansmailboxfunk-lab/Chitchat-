@@ -96,12 +96,25 @@ document.querySelectorAll("[data-accordion] .acc-btn").forEach((btn) => {
   if (!form || !statusEl) return;
 
   const btn = form.querySelector('button[type="submit"]');
+const showStatus = (msg, type) => {
+  statusEl.hidden = false;
 
-  const showStatus = (msg, type) => {
-    statusEl.hidden = false;
-    statusEl.className = `form-status ${type}`;
-    statusEl.textContent = msg;
-  };
+  // reset classes to retrigger animation
+  statusEl.className = `form-status ${type}`;
+  statusEl.classList.remove("animate-in", "animate-error");
+
+  const icon =
+    type === "success" ? "✓" :
+    type === "error"   ? "!" :
+    "…";
+
+  statusEl.innerHTML = `<span class="status-icon" aria-hidden="true">${icon}</span>${msg}`;
+
+  // trigger animation
+  void statusEl.offsetWidth; // reflow hack
+  statusEl.classList.add(type === "error" ? "animate-error" : "animate-in");
+};
+
 
   const clearStatus = () => {
     statusEl.hidden = true;
