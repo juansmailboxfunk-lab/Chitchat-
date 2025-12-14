@@ -323,35 +323,42 @@
     </section>
 
     <!-- CONTACT -->
-    <form class="panel" action="contact.php" method="POST" novalidate>
-  <h3>Contacto</h3>
+    <form class="contact-form panel" action="contact.php" method="POST" novalidate>
+  <div class="contact-form-head">
+    <h3>Contacto</h3>
+    <p class="muted">Cuéntame un poco y te respondo lo antes posible.</p>
+  </div>
 
   <!-- Honeypot (hidden field for bots) -->
-  <input type="text" name="company" tabindex="-1" autocomplete="off" style="display:none">
+  <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp">
 
-  <div class="form-field">
-    <label for="name">Nombre</label>
-    <input id="name" name="name" type="text" required>
+  <div class="contact-form-grid">
+    <div class="form-field">
+      <label for="name">Nombre</label>
+      <input id="name" name="name" type="text" placeholder="Tu nombre" required>
+    </div>
+
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+    </div>
+
+    <div class="form-field form-field-full">
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" rows="5" placeholder="¿En qué puedo ayudarte?" required></textarea>
+    </div>
   </div>
 
-  <div class="form-field">
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required>
+  <div class="contact-form-actions">
+    <button class="btn btn-primary" type="submit">
+      Enviar mensaje
+    </button>
+    <p class="muted">
+      Al enviar este formulario aceptas la <a href="privacy.html">política de privacidad</a>.
+    </p>
   </div>
-
-  <div class="form-field">
-    <label for="message">Mensaje</label>
-    <textarea id="message" name="message" rows="4" required></textarea>
-  </div>
-
-  <button class="btn btn-primary" type="submit">
-    Enviar mensaje
-  </button>
-
-  <p class="muted" style="margin-top:10px">
-    Al enviar este formulario aceptas la <a href="privacy.html">política de privacidad</a>.
-  </p>
 </form>
+
 
 
           <p class="muted legal-line">
