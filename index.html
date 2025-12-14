@@ -323,11 +323,21 @@
     </section>
 
     <!-- CONTACT -->
-    <form class="contact-form panel" action="contact.php" method="POST" novalidate>
+    <form id="contactForm" class="contact-form panel" action="contact.php" method="POST" novalidate>
   <div class="contact-form-head">
     <h3>Contacto</h3>
     <p class="muted">Cuéntame un poco y te respondo lo antes posible.</p>
   </div>
+
+  <!-- NEW: inline status -->
+  <div id="formStatus" class="form-status" role="status" aria-live="polite" hidden></div>
+
+  <!-- Honeypot -->
+  <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp">
+
+  ...
+</form>
+
 
   <!-- Honeypot (hidden field for bots) -->
   <input type="text" name="company" tabindex="-1" autocomplete="off" class="hp">
