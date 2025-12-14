@@ -5,109 +5,198 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chit Chat — Logopedia | Speech Therapy</title>
-  <meta name="description" content="Chit Chat — Logopedia para niños y familias. Bilingual Spanish/English one-page.">
-  <link rel="preload" href="images/hero.svg" as="image" type="image/svg+xml">
+  <meta name="description" content="Chit Chat: logopedia para niños y familias. Atención cercana, lúdica y basada en evidencia. Bilingüe ES/EN.">
+
+  <!-- Favicon (SVG) -->
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Preload hero and stylesheet -->
+  <link rel="preload" href="images/hero.svg" as="image" type="image/svg+xml" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Open Graph / Twitter (update URL and image when deployed) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chit Chat — Logopedia | Speech Therapy">
+  <meta property="og:description" content="Logopedia cercana y lúdica para niños y familias. Bilingüe ES/EN.">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/images/og-cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chit Chat — Logopedia | Speech Therapy">
+  <meta name="twitter:description" content="Logopedia cercana y lúdica para niños y familias. Bilingüe ES/EN.">
+  <meta name="twitter:image" content="https://example.com/images/og-cover.png">
+
+  <!-- JSON-LD: MedicalBusiness (adjust details as needed) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Chit Chat",
+    "url": "https://example.com/",
+    "image": "https://example.com/images/og-cover.png",
+    "telephone": "+34 600 000 000",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Ejemplo 123",
+      "addressLocality": "Madrid",
+      "postalCode": "28000",
+      "addressCountry": "ES"
+    },
+    "areaServed": "Madrid",
+    "openingHours": "Mo-Fr 10:00-19:00",
+    "sameAs": ["https://www.instagram.com/yourprofile","https://www.facebook.com/yourpage"]
+  }
+  </script>
+
 </head>
 <body>
+  <a class="skip-link" href="#services">Skip to content</a>
+
   <header class="topbar">
     <div class="container inner">
       <div class="brand">
-        <img src="images/logo.svg" alt="Chit Chat logo">
+        <img src="images/logo.svg" alt="Chit Chat logo" loading="eager" fetchpriority="high">
         <div class="name">Chit Chat</div>
       </div>
-      <nav class="lang-toggle">
+      <nav class="navlinks" id="anchorLinks" aria-label="Section navigation">
+        <!-- Filled by JS -->
+      </nav>
+      <div class="lang-toggle">
         <button id="ESBtn" class="active" aria-pressed="true">ES</button>
         <button id="ENBtn" aria-pressed="false">EN</button>
         <a href="#contact"><button class="cta-btn" style="margin-left:8px;">Contact</button></a>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container wrap">
-      <div>
-        <h1 id="heroTitle">Chit Chat — Logopedia para niños y familias</h1>
-        <p id="heroSub" class="lead">Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online.</p>
-        <div id="badges" class="badges"></div>
-        <button id="ctaBtn" class="cta-btn" aria-label="Scroll to contact">Reserva una cita</button>
-      </div>
-      <div class="hero-card">
-        <img src="images/hero.svg" alt="Illustration of child speech therapy">
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="section">
-    <div class="container">
-      <h2 id="servicesTitle">Servicios</h2>
-      <p id="servicesLead" class="lead">Seis áreas clave para apoyar a tu peque:</p>
-      <div id="servicesGrid" class="grid grid-3"></div>
-    </div>
-  </section>
-
-  <section id="about" class="section">
-    <div class="container grid grid-2">
-      <div class="feature">
-        <h2 id="aboutTitle">Sobre Chit Chat</h2>
-        <p id="aboutText">
-          Acompañamos a niños y familias con una logopedia cercana, práctica y con resultados.
-        </p>
-      </div>
-      <div class="feature">
-        <h2 id="approachTitle">Enfoque</h2>
-        <ul id="approachList" class="list"></ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials" class="section">
-    <div class="container">
-      <h2 id="testimonialsTitle">Testimonios</h2>
-      <div id="testimonialsWrap" class="grid grid-3"></div>
-    </div>
-  </section>
-
-  <section id="faq" class="section">
-    <div class="container">
-      <h2 id="faqTitle">Preguntas frecuentes</h2>
-      <div id="faqWrap" class="grid grid-3"></div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="container grid grid-2">
-      <div>
-        <h2 id="contactTitle">Contacto</h2>
-        <p id="contactLead" class="lead">Cuéntanos un poco y te respondemos pronto.</p>
-        <div class="form">
-          <!-- TODO: Replace data-formspree with your Formspree endpoint, e.g. https://formspree.io/f/abcxyz -->
-          <form id="contactForm" data-formspree="">
-            <div class="row">
-              <input id="nameInput" class="input" type="text" name="name" placeholder="Tu nombre" required>
-              <input id="emailInput" class="input" type="email" name="email" placeholder="Tu email" required>
-            </div>
-            <input id="phoneInput" class="input" type="text" name="phone" placeholder="Teléfono (opcional)">
-            <textarea id="msgInput" class="input" name="message" rows="5" placeholder="Mensaje" required></textarea>
-            <button id="submitBtn" class="cta-btn" type="submit">Enviar</button>
-            <div id="formHint" class="hint" style="margin-top:10px;">Usamos Formspree para enviar los mensajes de forma segura.</div>
-          </form>
+  <main class="fade-wrap">
+    <section class="hero" id="hero">
+      <div class="container wrap">
+        <div>
+          <h1 id="heroTitle">Chit Chat — Logopedia para niños y familias</h1>
+          <p id="heroSub" class="lead">Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online.</p>
+          <div id="badges" class="badges"></div>
+          <button id="ctaBtn" class="cta-btn" aria-label="Scroll to contact">Reserva una cita</button>
+        </div>
+        <div class="hero-card">
+          <img src="images/hero.svg" alt="Illustration of child speech therapy" loading="eager" fetchpriority="high">
         </div>
       </div>
-      <div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2 id="servicesTitle">Servicios</h2>
+        <p id="servicesLead" class="lead">Seis áreas clave para apoyar a tu peque:</p>
+        <div id="servicesGrid" class="grid grid-3"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container grid grid-2">
         <div class="feature">
-          <p><strong>WhatsApp</strong></p>
-          <a class="whatsapp" href="https://wa.me/34600000000" target="_blank" rel="noopener">
-            <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.01c-.27-.14-1.6-.79-1.84-.88-.24-.09-.42-.14-.6.14-.18.27-.69.88-.84 1.06-.15.18-.31.2-.58.07-.27-.14-1.13-.41-2.16-1.31-.8-.71-1.34-1.58-1.49-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.98-.21-.51-.43-.44-.6-.45l-.51-.01c-.18 0-.47.07-.72.34-.24.27-.95.93-.95 2.27 0 1.33.98 2.62 1.12 2.8.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.57.65.2 1.24.17 1.7.1.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.06-.11-.24-.18-.51-.31zM16 3C8.82 3 3 8.82 3 16c0 2.3.62 4.46 1.69 6.32L3 29l6.86-1.8A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3z"/></svg>
-            <span id="whatsLabel">Escríbenos por WhatsApp</span>
-          </a>
+          <h2 id="aboutTitle">Sobre Chit Chat</h2>
+          <p id="aboutText">
+            Acompañamos a niños y familias con una logopedia cercana, práctica y con resultados.
+          </p>
         </div>
-        <div class="feature" style="margin-top:14px;">
-          <p class="hint">Correo alternativo: <a href="mailto:hello@chitchat.example">hello@chitchat.example</a></p>
+        <div class="feature">
+          <h2 id="approachTitle">Enfoque</h2>
+          <ul id="approachList" class="list"></ul>
         </div>
       </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 id="testimonialsTitle">Testimonios</h2>
+        <div id="testimonialsWrap" class="grid grid-3"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 id="faqTitle">Preguntas frecuentes</h2>
+        <div id="faqWrap" class="grid grid-3"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container grid grid-2">
+        <div>
+          <h2 id="contactTitle">Contacto</h2>
+          <p id="contactLead" class="lead">Cuéntanos un poco y te respondemos pronto.</p>
+          <div class="form">
+            <!-- Replace data-formspree with your Formspree endpoint -->
+            <form id="contactForm" data-formspree="">
+              <div class="row">
+                <div>
+                  <input id="nameInput" class="input" type="text" name="name" placeholder="Tu nombre" required>
+                  <div id="nameError" class="error" aria-live="polite"></div>
+                </div>
+                <div>
+                  <input id="emailInput" class="input" type="email" name="email" placeholder="Tu email" required>
+                  <div id="emailError" class="error" aria-live="polite"></div>
+                </div>
+              </div>
+              <input id="phoneInput" class="input" type="text" name="phone" placeholder="Teléfono (opcional)">
+              <textarea id="msgInput" class="input" name="message" rows="5" placeholder="Mensaje" required></textarea>
+              <div id="msgError" class="error" aria-live="polite"></div>
+
+              <label style="display:flex;gap:8px;align-items:flex-start;margin:6px 0 10px;">
+                <input id="gdpr" type="checkbox" required>
+                <span id="gdprLabel">He leído y acepto la política de privacidad.</span>
+              </label>
+              <div id="gdprError" class="error" aria-live="polite"></div>
+
+              <button id="submitBtn" class="cta-btn" type="submit">Enviar</button>
+              <div id="formHint" class="hint" style="margin-top:10px;">Usamos Formspree para enviar los mensajes de forma segura.</div>
+            </form>
+          </div>
+        </div>
+        <div>
+          <div class="feature">
+            <p><strong>WhatsApp</strong></p>
+            <a class="whatsapp" href="https://wa.me/34600000000" target="_blank" rel="noopener">
+              <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.01c-.27-.14-1.6-.79-1.84-.88-.24-.09-.42-.14-.6.14-.18.27-.69.88-.84 1.06-.15.18-.31.2-.58.07-.27-.14-1.13-.41-2.16-1.31-.8-.71-1.34-1.58-1.49-1.85-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.98-.21-.51-.43-.44-.6-.45l-.51-.01c-.18 0-.47.07-.72.34-.24.27-.95.93-.95 2.27 0 1.33.98 2.62 1.12 2.8.14.18 1.93 2.95 4.67 4.13.65.28 1.16.45 1.56.57.65.2 1.24.17 1.7.1.52-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.06-.11-.24-.18-.51-.31zM16 3C8.82 3 3 8.82 3 16c0 2.3.62 4.46 1.69 6.32L3 29l6.86-1.8A12.94 12.94 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3z"/></svg>
+              <span id="whatsLabel">Escríbenos por WhatsApp</span>
+            </a>
+          </div>
+          <div class="feature" style="margin-top:14px;">
+            <p class="hint">Correo alternativo: <a href="mailto:hello@chitchat.example">hello@chitchat.example</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Back-to-top button -->
+  <button id="toTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- Consent banner (analytics) -->
+  <div id="consentBox" class="consent" role="dialog" aria-live="polite" style="display:none;">
+    <p id="consentText">Usamos analíticas ligeras (sin cookies) para mejorar la web. ¿Aceptas?</p>
+    <div class="actions">
+      <button id="declineBtn" class="btn">Rechazar</button>
+      <button id="acceptBtn" class="btn primary">Aceptar</button>
     </div>
-  </section>
+  </div>
+
+  <!-- Success Overlay -->
+  <style>
+    #successOverlay{position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.3);z-index:1400;opacity:0;transition:opacity .18s ease}
+    #successOverlay.show{opacity:1}
+    .success-card{background:#fff;border-radius:16px;padding:20px;border:1px solid rgba(15,23,42,.1);box-shadow:0 10px 30px rgba(2,6,23,.15);max-width:420px}
+    .success-card h3{margin:0 0 8px}
+    .success-card p{margin:0 0 14px;color:#334155}
+  </style>
+  <div id="successOverlay" aria-modal="true" role="dialog" aria-labelledby="successTitle">
+    <div class="success-card">
+      <h3 id="successTitle">¡Gracias!</h3>
+      <p>Hemos recibido tu mensaje. Te contactaremos pronto.</p>
+      <button id="successClose" class="btn primary">Cerrar</button>
+    </div>
+  </div>
 
   <footer>
     <div class="container">
