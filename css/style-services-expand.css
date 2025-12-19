@@ -169,4 +169,12 @@
   #serviceOverlayContent h3{ font-size: 1.25rem; }
 }
 
+#serviceOverlayContent h3::after{
+  content: "Información del servicio";
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: rgba(92, 100, 119, 0.85);
+  margin-top: 6px;
+}
 
