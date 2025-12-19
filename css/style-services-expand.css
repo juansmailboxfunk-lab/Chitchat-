@@ -91,3 +91,58 @@
 
 /* Keep the toggle but*
 
+/* =========================
+   Services overlay (no reflow, full text)
+   ========================= */
+.service-overlay[hidden]{ display:none !important; }
+
+.service-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(20, 24, 32, 0.22);
+  backdrop-filter: blur(6px);
+}
+
+.service-overlay-card{
+  width: min(820px, calc(100vw - 36px));
+  max-height: min(70vh, 720px);
+  overflow: auto;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(31,36,48,0.14);
+  border-radius: 22px;
+  box-shadow: 0 28px 70px rgba(31,36,48,0.25);
+  padding: 18px 18px 16px;
+  position: relative;
+}
+
+.service-overlay-close{
+  position: sticky;
+  top: 10px;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  border: 1px solid rgba(31,36,48,0.12);
+  background: rgba(255,255,255,0.9);
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#serviceOverlayContent h3{
+  margin: 0 0 10px 0;
+}
+
+#serviceOverlayContent p,
+#serviceOverlayContent li{
+  color: var(--muted);
+}
+
+#serviceOverlayContent ul{
+  margin: 8px 0 0 18px;
+}
+#serviceOverlayContent li{ margin: 6px 0; }
