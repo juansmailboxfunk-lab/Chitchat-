@@ -49,6 +49,11 @@
 
 body.modal-open{ overflow: hidden; }
 
+.services-menu {
+  display: flex;
+  justify-content: center;
+}
+
 .service-modal-backdrop.is-open{ display:flex; }
 
 .service-modal{
