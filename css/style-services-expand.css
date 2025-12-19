@@ -1,61 +1,34 @@
-// services-expand.js — simple inline expand/collapse (no modal, no overlay)
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".service-card");
 
-  cards.forEach((card) => {
-    const btn = card.querySelector(".service-toggle");
-    const more = card.querySelector(".service-more");
-    const icon = card.querySelector(".toggle-icon");
-    const text = card.querySelector(".toggle-text");
+/* =========================================
+   Services – Desktop Modal / Mobile Accordion
+   ========================================= */
 
-    if (!btn || !more) return;
+/* Mobile: keep existing accordion behaviour (default styles untouched) */
 
-    // Ensure initial state
-    more.hidden = true;
-    btn.setAttribute("aria-expanded", "false");
+/* Desktop: show expanded service as centered overlay */
+@media (min-width: 900px) {
+  .services-grid.has-expanded {
+    position: relative;
+  }
 
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+  .service-card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 900px;
+    width: calc(100% - 48px);
+    max-height: 85vh;
+    overflow-y: auto;
+    z-index: 1000;
+  }
 
-      const isOpen = btn.getAttribute("aria-expanded") === "true";
-
-      // Close all others (optional but nice)
-      cards.forEach((other) => {
-        if (other === card) return;
-        const ob = other.querySelector(".service-toggle");
-        const om = other.querySelector(".service-more");
-        const oi = other.querySelector(".toggle-icon");
-        const ot = other.querySelector(".toggle-text");
-        if (!ob || !om) return;
-
-        ob.setAttribute("aria-expanded", "false");
-        om.hidden = true;
-        other.classList.remove("is-open");
-        if (oi) oi.textContent = "+";
-        if (ot) ot.textContent = "Más información";
-      });
-
-      // Toggle this one
-      btn.setAttribute("aria-expanded", String(!isOpen));
-      more.hidden = isOpen;
-      card.classList.toggle("is-open", !isOpen);
-
-      if (icon) icon.textContent = isOpen ? "+" : "×";
-      if (text) text.textContent = isOpen ? "Más información" : "Menos información";
-    });
-  });
-});
-
-/* Ensure cards can grow when expanded */
-.service-card{
-  height: auto !important;
-  min-height: 0 !important;
-  overflow: visible !important;
-}
-
-/* Make expanded content layout clean */
-.service-more{
-  margin-top: 12px;
+  .services-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.25);
+    backdrop-filter: blur(2px);
+    z-index: 900;
+  }
 }
 
