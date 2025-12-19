@@ -46,3 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+/* Ensure cards can grow when expanded */
+.service-card{
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+/* Make expanded content layout clean */
+.service-more{
+  margin-top: 12px;
+}
+
