@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Map service → image
   const serviceImages = {
-    estimulacion: "images/service-estimulacion.png",
-    comunicacion: "images/service-comunicacion.png",
-    articulacion: "images/service-articulacion.png",
-    alimentacion: "images/service-alimentacion.png",
-    neurodiversidad: "images/service-neurodiversidad.png",
+    estimulacion: "images/service-estimulacion-info.png",
+    comunicacion: "images/service-comunicacion-info.png",
+    articulacion: "images/service-articulacion-info.png",
+    alimentacion: "images/service-alimentacion-info.png",
+    neurodiversidad: "images/service-neurodiversidad-info.png",
     familias: "images/service-familias.png",
   };
 
