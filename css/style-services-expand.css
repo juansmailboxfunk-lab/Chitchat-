@@ -44,3 +44,50 @@
   margin-top: 12px;
 }
 
+/* =========================
+   Expand as overlay (no layout shift)
+   ========================= */
+
+.service-card{
+  position: relative;
+  overflow: visible; /* allow overlay to extend */
+}
+
+/* Keep cards visually consistent */
+.service-preview{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* The expanded panel overlays instead of expanding the card */
+.service-more{
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 86px;                 /* below the title area */
+  z-index: 20;
+
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(31,36,48,0.12);
+  border-radius: 16px;
+  box-shadow: 0 22px 50px rgba(31,36,48,0.14);
+
+  padding: 14px 14px 16px;
+  max-height: 260px;         /* prevents giant overlay */
+  overflow: auto;
+}
+
+/* Only show overlay when card is open */
+.service-more[hidden]{ display:none !important; }
+
+/* Make open card feel active */
+.service-card.is-open{
+  z-index: 5; /* ensure it sits above neighbors */
+  border-color: rgba(124,140,255,0.28);
+  box-shadow: 0 18px 40px rgba(31,36,48,0.10);
+}
+
+/* Keep the toggle but*
+
