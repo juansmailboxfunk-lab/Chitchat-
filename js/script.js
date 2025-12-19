@@ -1,3 +1,4 @@
+alert('Script loaded');
 // Chit Chat — JS (services UX + contact inline + mobile nav)
 (() => {
   const qs = (s, el=document) => el.querySelector(s);
