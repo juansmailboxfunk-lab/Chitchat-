@@ -244,3 +244,30 @@
 .service-overlay-text ul{
   margin-top: 10px;
 }
+
+/* =========================
+   Mobile overlay fixes
+   ========================= */
+@media (max-width: 640px){
+
+  /* Give the modal more vertical room */
+  .service-overlay-card{
+    max-height: 88vh;
+    padding: 16px 14px 14px;
+  }
+
+  /* Make image clearly visible on mobile */
+  .service-overlay-figure{
+    margin: 12px auto 16px;
+  }
+
+  .service-overlay-figure img{
+    max-width: 100%;
+    border-radius: 18px;
+  }
+
+  /* Ensure text flows naturally after image */
+  .service-overlay-text{
+    margin-top: 0;
+  }
+}
