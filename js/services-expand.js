@@ -1,108 +1,55 @@
-// services-expand.js — simple inline expand/collapse (no modal, no overlay)
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".service-card");
+  const overlay = document.getElementById("serviceOverlay");
+  const overlayCard = overlay?.querySelector(".service-overlay-card");
+  const overlayClose = overlay?.querySelector(".service-overlay-close");
+  const overlayContent = document.getElementById("serviceOverlayContent");
 
-  cards.forEach((card) => {
-    const btn = card.querySelector(".service-toggle");
+  if (!overlay || !overlayClose || !overlayContent) return;
+
+  function openOverlay(card){
+    const title = card.querySelector("h3")?.textContent?.trim() || "";
     const more = card.querySelector(".service-more");
-    const icon = card.querySelector(".toggle-icon");
-    const text = card.querySelector(".toggle-text");
 
-    if (!btn || !more) return;
+    // If .service-more doesn't exist or is empty, fail gracefully
+    const moreHtml = more ? more.innerHTML : "<p>No hay más información disponible.</p>";
 
-    // Ensure initial state
-    more.hidden = true;
-    btn.setAttribute("aria-expanded", "false");
+    overlayContent.innerHTML = `
+      <h3>${title}</h3>
+      ${moreHtml}
+    `;
+
+    overlay.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeOverlay(){
+    overlay.hidden = true;
+    overlayContent.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+
+  // Bind buttons
+  document.querySelectorAll(".service-card").forEach(card => {
+    const btn = card.querySelector(".service-toggle");
+    if (!btn) return;
 
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-
-      const isOpen = btn.getAttribute("aria-expanded") === "true";
-
-      // Close all others (optional but nice)
-      cards.forEach((other) => {
-        if (other === card) return;
-        const ob = other.querySelector(".service-toggle");
-        const om = other.querySelector(".service-more");
-        const oi = other.querySelector(".toggle-icon");
-        const ot = other.querySelector(".toggle-text");
-        if (!ob || !om) return;
-
-        ob.setAttribute("aria-expanded", "false");
-        om.hidden = true;
-        other.classList.remove("is-open");
-        if (oi) oi.textContent = "+";
-        if (ot) ot.textContent = "Más información";
-      });
-
-      // Toggle this one
-      btn.setAttribute("aria-expanded", String(!isOpen));
-      more.hidden = isOpen;
-      card.classList.toggle("is-open", !isOpen);
-
-      if (icon) icon.textContent = isOpen ? "+" : "×";
-      if (text) text.textContent = isOpen ? "Más información" : "Menos información";
+      openOverlay(card);
     });
+  });
+
+  // Close handlers
+  overlayClose.addEventListener("click", closeOverlay);
+
+  overlay.addEventListener("click", (e) => {
+    // click outside the card closes
+    if (e.target === overlay) closeOverlay();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (!overlay.hidden && e.key === "Escape") closeOverlay();
   });
 });
 
-
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = [...document.querySelectorAll(".service-card")];
-
-  function closeCard(card){
-    const btn = card.querySelector(".service-toggle");
-    const more = card.querySelector(".service-more");
-    const icon = card.querySelector(".toggle-icon");
-    const text = card.querySelector(".toggle-text");
-    if (!btn || !more) return;
-
-    btn.setAttribute("aria-expanded", "false");
-    more.hidden = true;
-    card.classList.remove("is-open");
-    if (icon) icon.textContent = "+";
-    if (text) text.textContent = "Más información";
-  }
-
-  function openCard(card){
-    const btn = card.querySelector(".service-toggle");
-    const more = card.querySelector(".service-more");
-    const icon = card.querySelector(".toggle-icon");
-    const text = card.querySelector(".toggle-text");
-    if (!btn || !more) return;
-
-    // close others
-    cards.forEach(c => { if (c !== card) closeCard(c); });
-
-    btn.setAttribute("aria-expanded", "true");
-    more.hidden = false;
-    card.classList.add("is-open");
-    if (icon) icon.textContent = "×";
-    if (text) text.textContent = "Menos información";
-  }
-
-  cards.forEach(card => {
-    const btn = card.querySelector(".service-toggle");
-    const more = card.querySelector(".service-more");
-    if (!btn || !more) return;
-
-    // init
-    more.hidden = true;
-    btn.setAttribute("aria-expanded", "false");
-
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const isOpen = btn.getAttribute("aria-expanded") === "true";
-      if (isOpen) closeCard(card);
-      else openCard(card);
-    });
-
-    // prevent clicks inside overlay from closing
-    more.addEventListener("click", (e) => e.stopPropagation());
-  });
-
-  // click outside closes any open
-  docume
