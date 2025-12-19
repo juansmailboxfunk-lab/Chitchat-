@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     articulacion: "images/service-articulacion-info.png",
     alimentacion: "images/service-alimentacion-info.png",
     neurodiversidad: "images/service-neurodiversidad-info.png",
-    familias: "images/service-familias.png",
+    familias: "images/service-familias-info.png",
   };
 
   function setBtnOpenState(btn, isOpen) {
