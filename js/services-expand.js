@@ -1,4 +1,4 @@
-// services-expand.js — Global overlay (no reflow) with button state update
+// services-expand.js — Global overlay (with inline image injection)
 document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("serviceOverlay");
   const overlayClose = overlay?.querySelector(".service-overlay-close");
@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!overlay || !overlayClose || !overlayContent) return;
 
-  let activeCard = null;
   let activeBtn = null;
 
   function setBtnOpenState(btn, isOpen) {
@@ -24,29 +23,44 @@ document.addEventListener("DOMContentLoaded", () => {
   function openOverlay(card) {
     const title = card.querySelector("h3")?.textContent?.trim() || "";
     const more = card.querySelector(".service-more");
-    const moreHtml = more && more.innerHTML.trim()
+
+    let html = more && more.innerHTML.trim()
       ? more.innerHTML
       : "<p>No hay más información disponible.</p>";
 
-    // Track active
-    activeCard = card;
-    activeBtn = card.querySelector(".service-toggle");
+    // 🔽 INSERT IMAGE AFTER “comunicación en el día a día”
+    if (
+      title.toLowerCase().includes("estimulación") &&
+      html.includes("comunicación en el día a día")
+    ) {
+      html = html.replace(
+        /(comunicación en el día a día\.?<\/p>)/i,
+        `$1
+        <figure class="service-overlay-figure">
+          <img
+            src="images/estimulacion-temprana-info.png"
+            alt="Estimulación temprana: atención conjunta, primeros gestos, comprensión del lenguaje y juego en familia"
+            loading="lazy"
+          />
+        </figure>`
+      );
+    }
 
-    // Update button UI (close others first)
-    document.querySelectorAll(".service-card .service-toggle[aria-expanded='true']").forEach((btn) => {
+    // Reset other buttons
+    document.querySelectorAll(".service-toggle[aria-expanded='true']").forEach(btn => {
       setBtnOpenState(btn, false);
     });
+
+    activeBtn = card.querySelector(".service-toggle");
     setBtnOpenState(activeBtn, true);
 
     overlayContent.innerHTML = `
       <h3>${title}</h3>
-      ${moreHtml}
+      ${html}
     `;
 
     overlay.hidden = false;
     document.body.style.overflow = "hidden";
-
-    // Focus close button for accessibility
     overlayClose.focus();
   }
 
@@ -55,43 +69,28 @@ document.addEventListener("DOMContentLoaded", () => {
     overlayContent.innerHTML = "";
     document.body.style.overflow = "";
 
-    // Reset active button
     setBtnOpenState(activeBtn, false);
-
-    // Restore focus to the button that opened it
     if (activeBtn) activeBtn.focus();
-
-    activeCard = null;
     activeBtn = null;
   }
 
   // Bind buttons
-  document.querySelectorAll(".service-card").forEach((card) => {
+  document.querySelectorAll(".service-card").forEach(card => {
     const btn = card.querySelector(".service-toggle");
     if (!btn) return;
 
-    // Ensure baseline state
     btn.setAttribute("aria-expanded", "false");
 
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
-
-      // If clicking the same card while open, close
-      const isOpen = !overlay.hidden && activeCard === card;
-      if (isOpen) closeOverlay();
-      else openOverlay(card);
+      openOverlay(card);
     });
   });
 
-  // Close handlers
-  overlayClose.addEventListener("click", (e) => {
-    e.preventDefault();
-    closeOverlay();
-  });
+  overlayClose.addEventListener("click", closeOverlay);
 
   overlay.addEventListener("click", (e) => {
-    // click outside the card closes
     if (e.target === overlay) closeOverlay();
   });
 
@@ -99,5 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!overlay.hidden && e.key === "Escape") closeOverlay();
   });
 });
+
 
 
