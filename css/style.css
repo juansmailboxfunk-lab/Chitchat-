@@ -223,6 +223,11 @@ a:hover{ text-decoration: underline; }
 .fineprint{ color: var(--muted); font-size: 13px; }
 
 /* Services */
+.services-menu {
+  display: flex;
+  justify-content: center;
+}
+
 .services-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
