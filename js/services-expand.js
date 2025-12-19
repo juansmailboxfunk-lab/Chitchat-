@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     overlay.hidden = false;
     document.body.style.overflow = "hidden";
+    overlay.querySelector('.service-overlay-card')?.scrollTo(0, 0);
     overlayClose.focus();
   }
 
