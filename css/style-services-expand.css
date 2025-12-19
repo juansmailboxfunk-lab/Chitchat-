@@ -218,3 +218,29 @@
   border-radius: 22px;
   box-shadow: 0 22px 48px rgba(31,36,48,0.18);
 }
+/* Overlay image first */
+.service-overlay-figure{
+  margin: 18px auto 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.service-overlay-figure img{
+  width: 100%;
+  max-width: 560px;
+  border-radius: 22px;
+  box-shadow: 0 22px 48px rgba(31,36,48,0.18);
+}
+
+/* Text block spacing */
+.service-overlay-text{
+  margin-top: 6px;
+}
+
+.service-overlay-text p{
+  line-height: 1.65;
+}
+
+.service-overlay-text ul{
+  margin-top: 10px;
+}
