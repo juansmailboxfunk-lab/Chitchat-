@@ -223,6 +223,14 @@ a:hover{ text-decoration: underline; }
 .fineprint{ color: var(--muted); font-size: 13px; }
 
 /* Services */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Just to keep it on top of everything */
+}
+
 .services-menu {
   display: flex;
   justify-content: center;
