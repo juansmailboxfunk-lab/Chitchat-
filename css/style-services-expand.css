@@ -31,3 +31,37 @@
     z-index: 900;
   }
 }
+
+/* =========================
+   SERVICES EXPAND — patch
+   Remove dimming/overlay spotlight
+   ========================= */
+
+/* If your JS adds a class like .is-dimmed/.dimmed/.has-open on the grid/body,
+   these rules neutralize the fade. */
+.services-grid.is-dimmed .service-card,
+.services-grid.dimmed .service-card,
+body.services-dimmed .service-card {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+/* If there is an overlay pseudo-element on the grid/section, kill it */
+.services-grid::before,
+#servicios::before,
+.section#servicios::before {
+  content: none !important;
+}
+
+/* Keep the open card looking “active” in a clean way */
+.service-card.is-open,
+.service-card[aria-expanded="true"],
+.service-card.open {
+  box-shadow: var(--shadow) !important;
+  border-color: rgba(124, 140, 255, 0.28);
+}
+
+/* Make sure expanded content is readable and spaced nicely */
+.service-more[hidden] { display: none !important; }
+.service-more { margin-top: 10px; }
