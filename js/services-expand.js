@@ -1,4 +1,4 @@
-// services-expand.js — Global overlay + inject image after “comunicación en el día a día”
+// services-expand.js — Global overlay with image FIRST, text AFTER (all services)
 document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("serviceOverlay");
   const overlayClose = overlay?.querySelector(".service-overlay-close");
@@ -8,43 +8,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let activeBtn = null;
 
+  // Map service → image
+  const serviceImages = {
+    estimulacion: "images/service-estimulacion.png",
+    comunicacion: "images/service-comunicacion.png",
+    articulacion: "images/service-articulacion.png",
+    alimentacion: "images/service-alimentacion.png",
+    neurodiversidad: "images/service-neurodiversidad.png",
+    familias: "images/service-familias.png",
+  };
+
   function setBtnOpenState(btn, isOpen) {
     if (!btn) return;
     btn.setAttribute("aria-expanded", String(isOpen));
+
     const icon = btn.querySelector(".toggle-icon");
     const text = btn.querySelector(".toggle-text");
     if (icon) icon.textContent = isOpen ? "×" : "+";
     if (text) text.textContent = isOpen ? "Menos información" : "Más información";
   }
 
-  function injectImageAfterPhrase(containerEl) {
-    const phrase = "comunicación en el día a día";
-    const paragraphs = containerEl.querySelectorAll("p");
-
-    for (const p of paragraphs) {
-      const t = (p.textContent || "").toLowerCase();
-      if (t.includes(phrase)) {
-        const figure = document.createElement("figure");
-        figure.className = "service-overlay-figure";
-
-        const img = document.createElement("img");
-        img.src = "images/estimulacion-temprana-info.png"; // must exist
-        img.alt = "Estimulación temprana: atención conjunta, primeros gestos, comprensión del lenguaje y juego en familia";
-        img.loading = "lazy";
-
-        figure.appendChild(img);
-        p.insertAdjacentElement("afterend", figure);
-        break;
-      }
-    }
-  }
-
   function openOverlay(card) {
     const title = card.querySelector("h3")?.textContent?.trim() || "";
     const more = card.querySelector(".service-more");
+    const serviceKey = card.dataset.service;
+
     const moreHtml = more && more.innerHTML.trim()
       ? more.innerHTML
       : "<p>No hay más información disponible.</p>";
+
+    const imgSrc = serviceImages[serviceKey];
 
     // Reset other buttons
     document.querySelectorAll(".service-toggle[aria-expanded='true']").forEach(btn => {
@@ -54,12 +47,23 @@ document.addEventListener("DOMContentLoaded", () => {
     activeBtn = card.querySelector(".service-toggle");
     setBtnOpenState(activeBtn, true);
 
-    overlayContent.innerHTML = `<h3>${title}</h3>${moreHtml}`;
+    overlayContent.innerHTML = `
+      <h3>${title}</h3>
 
-    // Inject image ONLY for Estimulación temprana card
-    if (card.dataset.service === "estimulacion") {
-      injectImageAfterPhrase(overlayContent);
-    }
+      ${imgSrc ? `
+        <figure class="service-overlay-figure">
+          <img
+            src="${imgSrc}"
+            alt="${title}"
+            loading="lazy"
+          />
+        </figure>
+      ` : ""}
+
+      <div class="service-overlay-text">
+        ${moreHtml}
+      </div>
+    `;
 
     overlay.hidden = false;
     document.body.style.overflow = "hidden";
@@ -89,9 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   overlayClose.addEventListener("click", closeOverlay);
-  overlay.addEventListener("click", (e) => { if (e.target === overlay) closeOverlay(); });
-  document.addEventListener("keydown", (e) => { if (!overlay.hidden && e.key === "Escape") closeOverlay(); });
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeOverlay();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (!overlay.hidden && e.key === "Escape") closeOverlay();
+  });
 });
+
 
 
 
