@@ -1,9 +1,10 @@
-/* =========================================
-   Services – TRUE MODAL (Desktop)
-   ========================================= */
+/* ==================================================
+   Desktop Services Modal
+   ================================================== */
 
 (function () {
-  const isDesktop = () => window.matchMedia("(min-width: 900px)").matches;
+  const isDesktop = () =>
+    window.matchMedia("(min-width: 900px)").matches;
 
   document.addEventListener("click", (e) => {
     const btn = e.target.closest(".service-toggle");
@@ -13,9 +14,11 @@
 
     const card = btn.closest(".service-card");
     const content = card.querySelector(".service-more");
-    if (!content) return;
+    const title = card.querySelector("h3");
 
-    openModal(card.querySelector("h3").innerText, content.innerHTML);
+    if (!content || !title) return;
+
+    openModal(title.innerText, content.innerHTML);
   });
 
   function openModal(title, html) {
@@ -36,13 +39,17 @@
     document.body.append(backdrop, modal);
 
     backdrop.addEventListener("click", closeModal);
-    modal.querySelector(".services-modal-close").addEventListener("click", closeModal);
+    modal.querySelector(".services-modal-close")
+      .addEventListener("click", closeModal);
+
     document.addEventListener("keydown", escClose);
   }
 
   function closeModal() {
-    document.querySelectorAll(".services-modal, .services-modal-backdrop")
+    document
+      .querySelectorAll(".services-modal, .services-modal-backdrop")
       .forEach(el => el.remove());
+
     document.removeEventListener("keydown", escClose);
   }
 
