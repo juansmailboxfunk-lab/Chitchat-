@@ -1,96 +1,164 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chit Chat - Logopedia</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chit Chat — Logopedia</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#top" class="brand">
+        <img src="images/logo.svg" alt="Chit Chat" class="brand-mark" />
+        <div class="brand-text">
+          <div class="brand-name">Chit Chat</div>
+          <div class="brand-sub">Logopedia</div>
+        </div>
+      </a>
 
-  <header>
-    <nav>
-      <a href="/" class="logo">Chit Chat</a>
-      <div>
-        <a href="#">Servicios</a>
-        <a href="#">Sobre mí</a>
-        <a href="#">Preguntas</a>
-        <a href="#" class="cta">Reserva una cita</a>
+      <div class="nav-links">
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#preguntas">Preguntas</a>
+        <a href="#contacto" class="btn btn-primary">Reserva una cita</a>
       </div>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Chit Chat — Logopedia para niños y familias</h1>
-      <p>Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online.</p>
-      <p><strong>Logopeda titulada</strong> - Atención a niños - Neurodiversidad - Apoyo a familias</p>
-      <button class="cta">Reserva una cita</button>
-    </div>
-    <div class="hero-image">
-      <img src="images/hero-image.jpg" alt="Family speech therapy illustration">
-    </div>
-  </section>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1 class="hero-title">Chit Chat — Logopedia para niños y familias</h1>
+          <p class="hero-lead">Sesiones cercanas, lúdicas y basadas en evidencia. Atención en persona y online.</p>
+          <p class="hero-meta"><strong>Logopeda titulada</strong> - Atención a niños - Neurodiversidad - Apoyo a familias</p>
 
-  <section class="services">
-    <h2>¿Qué ofrecemos?</h2>
-    <div class="services-grid">
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contacto">Reserva una cita</a>
+          </div>
+        </div>
 
-      <div class="service-card">
-        <img src="images/estimulacion-s.png" alt="Estimulación temprana icon">
-        <h3>Estimulación temprana (0–3 años)</h3>
-        <p>Acompañamos el desarrollo comunicativo de los más pequeños desde sus primeros meses de vida...</p>
-        <div class="service-more">
-          <p>Trabajamos aspectos como:</p>
-          <ul>
-            <li>Atención conjunta y contacto visual</li>
-            <li>Primeros gestos y sonidos</li>
-            <li>Comprensión del lenguaje</li>
-            <li>Juego y comunicación funcional</li>
-          </ul>
+        <div class="hero-right">
+          <div class="hero-card">
+            <img src="images/hero.png" alt="Ilustración Chit Chat" />
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="service-card">
-        <img src="images/comunicacion-s.png" alt="Comunicación y lenguaje icon">
-        <h3>Comunicación y lenguaje (a partir de 4 años)</h3>
-        <p>Intervención en dificultades del lenguaje oral y la comunicación, adaptada a cada niño y a sus necesidades.</p>
-        <div class="service-more">
-          <p>Este servicio está pensado para niños que presentan:</p>
-          <ul>
-            <li>Retraso en el lenguaje</li>
-            <li>Trastorno del Desarrollo del Lenguaje (TEL)</li>
-            <li>Dificultades en la comprensión o expresión</li>
-          </ul>
+    <!-- SERVICES -->
+    <section id="servicios" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>¿Qué ofrecemos?</h2>
+          <p class="muted">Intervención adaptada a cada niño, con seguimiento y pautas claras para el día a día.</p>
+        </div>
+
+        <div id="servicesGrid" class="services-grid">
+          <!-- 1 -->
+          <article id="servicios-estimulacion" class="service-card" data-service="estimulacion">
+            <div class="service-top">
+              <div class="service-icon">
+                <img src="images/estimulacion-s.png" alt="Estimulación temprana" />
+              </div>
+              <h3>Estimulación temprana (0–3 años)</h3>
+            </div>
+
+            <p class="service-preview">
+              Acompañamos el desarrollo comunicativo de los más pequeños desde sus primeros meses de vida, respetando su ritmo y potenciando sus capacidades.
+            </p>
+
+            <div class="service-more">
+              <p>Trabajamos aspectos como:</p>
+              <ul>
+                <li>Atención conjunta y contacto visual</li>
+                <li>Primeros gestos y sonidos</li>
+                <li>Comprensión del lenguaje</li>
+                <li>Juego y comunicación funcional</li>
+              </ul>
+            </div>
+
+            <button class="service-toggle" type="button" aria-expanded="false">
+              <span class="toggle-icon">+</span>
+              <span class="toggle-text">Más información</span>
+            </button>
+          </article>
+
+          <!-- 2 -->
+          <article id="servicios-comunicacion" class="service-card" data-service="comunicacion">
+            <div class="service-top">
+              <div class="service-icon">
+                <img src="images/comunicacion-s.png" alt="Comunicación y lenguaje" />
+              </div>
+              <h3>Comunicación y lenguaje (a partir de 4 años)</h3>
+            </div>
+
+            <p class="service-preview">
+              Intervención en dificultades del lenguaje oral y la comunicación, adaptada a cada niño y a sus necesidades.
+            </p>
+
+            <div class="service-more">
+              <p>Este servicio está pensado para niños que presentan:</p>
+              <ul>
+                <li>Retraso en el lenguaje</li>
+                <li>Trastorno del Desarrollo del Lenguaje (TEL)</li>
+                <li>Dificultades en la comprensión o expresión</li>
+              </ul>
+            </div>
+
+            <button class="service-toggle" type="button" aria-expanded="false">
+              <span class="toggle-icon">+</span>
+              <span class="toggle-text">Más información</span>
+            </button>
+          </article>
+
+          <!-- 3 -->
+          <article id="servicios-articulacion" class="service-card" data-service="articulacion">
+            <div class="service-top">
+              <div class="service-icon">
+                <img src="images/articulacion-s.png" alt="Habla, fonemas y articulación" />
+              </div>
+              <h3>Habla, fonemas y articulación</h3>
+            </div>
+
+            <p class="service-preview">
+              Ayudamos a los niños a mejorar la pronunciación de los sonidos del habla de forma respetuosa y divertida.
+            </p>
+
+            <div class="service-more">
+              <p>La intervención se centra en:</p>
+              <ul>
+                <li>Conciencia y control de los movimientos orales</li>
+                <li>Producción correcta de los fonemas</li>
+                <li>Generalización del sonido en el habla espontánea</li>
+              </ul>
+            </div>
+
+            <button class="service-toggle" type="button" aria-expanded="false">
+              <span class="toggle-icon">+</span>
+              <span class="toggle-text">Más información</span>
+            </button>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="service-card">
-        <img src="images/articulacion-s.png" alt="Habla, fonemas y articulación icon">
-        <h3>Habla, fonemas y articulación</h3>
-        <p>Ayudamos a los niños a mejorar la pronunciación de los sonidos del habla de forma respetuosa y divertida.</p>
-        <div class="service-more">
-          <p>La intervención se centra en:</p>
-          <ul>
-            <li>Conciencia y control de los movimientos orales</li>
-            <li>Producción correcta de los fonemas</li>
-            <li>Generalización del sonido en el habla espontánea</li>
-          </ul>
-        </div>
-      </div>
+    <!-- (Optional anchors so menu works) -->
+    <section id="sobre" class="section"><div class="container"><h2>Sobre mí</h2></div></section>
+    <section id="preguntas" class="section"><div class="container"><h2>Preguntas</h2></div></section>
+    <section id="contacto" class="section"><div class="container"><h2>Contacto</h2></div></section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Chit Chat | Todos los derechos reservados.</p>
     </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Chit Chat | Todos los derechos reservados.</p>
   </footer>
 
   <script src="js/script.js"></script>
-
 </body>
-
 </html>
+
