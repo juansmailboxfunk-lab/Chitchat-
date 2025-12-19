@@ -1,0 +1,33 @@
+
+/* =========================================
+   Services – Desktop Modal / Mobile Accordion
+   ========================================= */
+
+/* Mobile: keep existing accordion behaviour (default styles untouched) */
+
+/* Desktop: show expanded service as centered overlay */
+@media (min-width: 900px) {
+  .services-grid.has-expanded {
+    position: relative;
+  }
+
+  .service-card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 900px;
+    width: calc(100% - 48px);
+    max-height: 85vh;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .services-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.25);
+    backdrop-filter: blur(2px);
+    z-index: 900;
+  }
+}

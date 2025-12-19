@@ -223,19 +223,6 @@ a:hover{ text-decoration: underline; }
 .fineprint{ color: var(--muted); font-size: 13px; }
 
 /* Services */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; /* Just to keep it on top of everything */
-}
-
-.services-menu {
-  display: flex;
-  justify-content: center;
-}
-
 .services-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -496,16 +483,6 @@ label.full{ grid-column: 1 / -1; }
   .two-col{ grid-template-columns: 1fr; }
   .section-head{ flex-direction: column; align-items:flex-start; }
 }
-@media (min-width: 768px) {
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-  }
-}
-
 @media (max-width: 860px){
   .nav{ display:none; }
   .nav-toggle{ display:block; }
