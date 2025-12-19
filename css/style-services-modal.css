@@ -1,0 +1,62 @@
+/* =========================================
+   Services – TRUE MODAL (Desktop only)
+   Mobile accordion untouched
+   ========================================= */
+
+@media (min-width: 900px) {
+
+  /* Prevent cards from expanding */
+  .service-card.expanded {
+    grid-column: auto !important;
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* Hide inline expanded content on desktop */
+  .service-more {
+    display: none !important;
+  }
+
+  /* Modal backdrop */
+  .services-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.35);
+    backdrop-filter: blur(3px);
+    z-index: 1000;
+  }
+
+  /* Modal container */
+  .services-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    max-width: 880px;
+    width: calc(100% - 48px);
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 22px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.25);
+    z-index: 1001;
+    padding: 22px;
+  }
+
+  .services-modal h3 {
+    margin-top: 0;
+  }
+
+  .services-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    border: none;
+    background: #f3f4f6;
+    border-radius: 999px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
