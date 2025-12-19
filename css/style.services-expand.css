@@ -113,3 +113,14 @@ a:focus-visible{
   outline-offset: 3px;
   border-radius: 999px;
 }
+
+@media (min-width: 768px) {
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+}
+
