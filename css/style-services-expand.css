@@ -1,15 +1,11 @@
 /* =========================================
-   Services – Desktop Modal / Mobile Accordion
+   Services – Global overlay (no reflow)
+   Works with the JS you pasted
    ========================================= */
 
-/* Mobile (<900px): inline accordion (natural flow) */
 .service-more[hidden]{ display:none !important; }
 
-.service-card{
-  position: relative;
-}
-
-/* Keep cards tidy; optional */
+/* Keep cards tidy (optional) */
 .service-preview{
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -17,56 +13,64 @@
   overflow: hidden;
 }
 
-.service-more{
-  margin-top: 12px;
+/* Hide the inline full text in cards (we show it in the overlay instead) */
+.service-card .service-more{
+  display: none !important;
 }
 
-/* Desktop (>=900px): show expanded card as centered modal */
-@media (min-width: 900px){
+/* Overlay */
+.service-overlay[hidden]{ display:none !important; }
 
-  /* Backdrop (you create this element via JS) */
-  .services-backdrop{
-    position: fixed;
-    inset: 0;
-    background: rgba(20,24,32,.22);
-    backdrop-filter: blur(6px);
-    z-index: 900;
-  }
-
-  /* The expanded card becomes the modal */
-  .service-card.expanded{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(900px, calc(100vw - 48px));
-    max-height: 85vh;
-    overflow: auto;
-
-    z-index: 1000;
-
-    background: rgba(255,255,255,0.96);
-    border: 1px solid rgba(31,36,48,0.14);
-    border-radius: 22px;
-    box-shadow: 0 28px 70px rgba(31,36,48,0.25);
-    padding: 18px;
-  }
-
-  /* Inside the modal, ensure "more" is normal flow (NOT absolute) */
-  .service-card.expanded .service-more{
-    position: static;
-    max-height: none;
-    overflow: visible;
-    margin-top: 12px;
-  }
-
-  /* Make sure the toggle stays usable */
-  .service-card.expanded .service-toggle{
-    position: sticky;
-    bottom: 0;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(6px);
-    margin-top: 14px;
-  }
+.service-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(20, 24, 32, 0.22);
+  backdrop-filter: blur(6px);
 }
+
+.service-overlay-card{
+  width: min(900px, calc(100vw - 36px));
+  max-height: min(75vh, 760px);
+  overflow: auto;
+
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(31,36,48,0.14);
+  border-radius: 22px;
+  box-shadow: 0 28px 70px rgba(31,36,48,0.25);
+  padding: 18px 18px 16px;
+  position: relative;
+}
+
+.service-overlay-close{
+  position: sticky;
+  top: 10px;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  border: 1px solid rgba(31,36,48,0.12);
+  background: rgba(255,255,255,0.9);
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#serviceOverlayContent h3{
+  margin: 0 0 10px 0;
+}
+
+#serviceOverlayContent p,
+#serviceOverlayContent li{
+  color: var(--muted);
+}
+
+#serviceOverlayContent ul{
+  margin: 8px 0 0 18px;
+}
+#serviceOverlayContent li{ margin: 6px 0; }
+
 
