@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.site-nav a[href^="#"]');
   const modalTriggers = document.querySelectorAll('[data-modal]');
   const languageButtons = document.querySelectorAll('.lang-btn[data-lang]');
+  const languageToggle = document.querySelector('.lang-toggle');
   const modalCloseSelectors = '[data-modal-close]';
   const focusableSelector = [
     'a[href]',
@@ -103,6 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
       button.classList.toggle('is-active', isActive);
       button.setAttribute('aria-pressed', String(isActive));
     });
+
+    if (languageToggle) {
+      languageToggle.setAttribute('data-lang', nextLanguage);
+    }
 
     persistLanguage(nextLanguage);
   };
