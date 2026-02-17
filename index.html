@@ -1,13 +1,389 @@
 <!doctype html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ChitChat</title>
+    <title>Chit Chat | Logopedia para niños y familias</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>Live Server works ✅</h1>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo">Chit Chat</a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#services">Servicios</a></li>
+            <li><a href="#about">Sobre Chit Chat</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container hero-content">
+          <p class="eyebrow">Atención en persona y online</p>
+          <h1>Chit Chat — Logopedia para niños y familias</h1>
+          <p class="subheadline">
+            Sesiones cercanas, lúdicas y basadas en evidencia.
+          </p>
+          <ul>
+            <li>Logopeda titulada</li>
+            <li>Atención a niños</li>
+            <li>Neurodiversidad</li>
+            <li>Apoyo a familias</li>
+          </ul>
+          <a href="#contact" class="button">Reserva una cita</a>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <h2>¿Qué ofrecemos?</h2>
+          <div class="services-grid">
+            <article class="card">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                  <path d="M8 12h8M12 8v8"></path>
+                </svg>
+              </div>
+              <h3>Estimulación temprana (0-3 años)</h3>
+              <p>
+                Acompañamos el desarrollo comunicativo de los más pequeños desde sus primeros meses de vida,
+                respetando su ritmo y potenciando sus capacidades.
+              </p>
+              <button type="button" class="button button-secondary service-more" data-modal="service-early" data-i18n-en="More">Más</button>
+            </article>
+
+            <article class="card">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                  <path d="M8 12h8M12 8v8"></path>
+                </svg>
+              </div>
+              <h3>Comunicación y lenguaje (a partir de 4 años)</h3>
+              <p>
+                Intervención en dificultades del lenguaje oral y la comunicación, adaptada a cada niño y a sus
+                necesidades.
+              </p>
+              <button type="button" class="button button-secondary service-more" data-modal="service-language" data-i18n-en="More">Más</button>
+            </article>
+
+            <article class="card">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                  <path d="M8 12h8M12 8v8"></path>
+                </svg>
+              </div>
+              <h3>Habla, fonemas y articulación</h3>
+              <p>
+                Ayudamos a los niños a mejorar la pronunciación de los sonidos del habla de forma respetuosa y
+                divertida.
+              </p>
+              <button type="button" class="button button-secondary service-more" data-modal="service-speech" data-i18n-en="More">Más</button>
+            </article>
+
+            <article class="card">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                  <path d="M8 12h8M12 8v8"></path>
+                </svg>
+              </div>
+              <h3>Alimentación oral infantil</h3>
+              <p>
+                Acompañamiento en dificultades relacionadas con la alimentación, la masticación y la aceptación de
+                alimentos.
+              </p>
+              <button type="button" class="button button-secondary service-more" data-modal="service-feeding" data-i18n-en="More">Más</button>
+            </article>
+
+            <article class="card">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                  <path d="M8 12h8M12 8v8"></path>
+                </svg>
+              </div>
+              <h3>Acompañamiento en neurodiversidad</h3>
+              <p>
+                Apoyo a niños con perfiles diversos de neurodesarrollo, respetando su forma única de comunicarse y
+                relacionarse.
+              </p>
+              <button type="button" class="button button-secondary service-more" data-modal="service-neuro" data-i18n-en="More">Más</button>
+            </article>
+
+            <article class="card">
+              <div class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <rect x="4" y="4" width="16" height="16" rx="4"></rect>
+                  <path d="M8 12h8M12 8v8"></path>
+                </svg>
+              </div>
+              <h3>Orientación y acompañamiento a familias</h3>
+              <p>
+                Las familias son una parte fundamental del proceso terapéutico.
+              </p>
+              <button type="button" class="button button-secondary service-more" data-modal="service-families" data-i18n-en="More">Más</button>
+            </article>
+          </div>
+
+          <div class="modal" id="service-early" role="dialog" aria-modal="true" aria-labelledby="service-early-title" hidden>
+            <div class="modal__backdrop" data-modal-close></div>
+            <div class="modal__panel" role="document" tabindex="-1">
+              <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+              <h3 id="service-early-title">Estimulación temprana (0-3 años)</h3>
+              <p>
+                Acompañamos el desarrollo comunicativo de los más pequeños desde sus primeros meses de vida,
+                respetando su ritmo y potenciando sus capacidades.
+              </p>
+              <p>
+                La estimulación temprana está dirigida a bebés y niños pequeños que presentan retrasos en el
+                desarrollo del lenguaje, la comunicación o la interacción, o que simplemente necesitan un pequeño
+                empujón para desarrollar todo su potencial.
+              </p>
+              <p>Trabajamos aspectos como:</p>
+              <ul>
+                <li>Atención conjunta y contacto visual</li>
+                <li>Primeros gestos y sonidos</li>
+                <li>Comprensión del lenguaje</li>
+                <li>Juego y comunicación funcional</li>
+              </ul>
+              <p>
+                Las sesiones se basan en el juego y en las rutinas diarias, y la familia participa activamente,
+                aprendiendo cómo favorecer la comunicación en el día a día.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal" id="service-language" role="dialog" aria-modal="true" aria-labelledby="service-language-title" hidden>
+            <div class="modal__backdrop" data-modal-close></div>
+            <div class="modal__panel" role="document" tabindex="-1">
+              <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+              <h3 id="service-language-title">Comunicación y lenguaje (a partir de 4 años)</h3>
+              <p>
+                Intervención en dificultades del lenguaje oral y la comunicación, adaptada a cada niño y a sus
+                necesidades.
+              </p>
+              <p>Este servicio está pensado para niños que presentan:</p>
+              <ul>
+                <li>Retraso en el lenguaje</li>
+                <li>Trastorno del Desarrollo del Lenguaje (TEL)</li>
+                <li>Dificultades en la comprensión o expresión</li>
+                <li>Problemas para construir frases, ampliar vocabulario o contar experiencias</li>
+              </ul>
+              <p>
+                Trabajamos de forma lúdica y funcional para que el niño se sienta seguro y motivado, favoreciendo
+                una comunicación más clara y eficaz tanto en casa como en el entorno escolar.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal" id="service-speech" role="dialog" aria-modal="true" aria-labelledby="service-speech-title" hidden>
+            <div class="modal__backdrop" data-modal-close></div>
+            <div class="modal__panel" role="document" tabindex="-1">
+              <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+              <h3 id="service-speech-title">Habla, fonemas y articulación</h3>
+              <p>
+                Ayudamos a los niños a mejorar la pronunciación de los sonidos del habla de forma respetuosa y
+                divertida.
+              </p>
+              <p>
+                Algunos niños tienen dificultades para pronunciar ciertos sonidos (como la /r/, /s/, /l/, /k/...),
+                lo que puede afectar a su inteligibilidad y confianza al hablar.
+              </p>
+              <p>La intervención se centra en:</p>
+              <ul>
+                <li>Conciencia y control de los movimientos orales</li>
+                <li>Producción correcta de los fonemas</li>
+                <li>Generalización del sonido en el habla espontánea</li>
+              </ul>
+              <p>
+                Siempre a través de juegos y actividades motivadoras, evitando ejercicios repetitivos o forzados.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal" id="service-feeding" role="dialog" aria-modal="true" aria-labelledby="service-feeding-title" hidden>
+            <div class="modal__backdrop" data-modal-close></div>
+            <div class="modal__panel" role="document" tabindex="-1">
+              <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+              <h3 id="service-feeding-title">Alimentación oral infantil</h3>
+              <p>
+                Acompañamiento en dificultades relacionadas con la alimentación, la masticación y la aceptación de
+                alimentos.
+              </p>
+              <p>Trabajamos con niños que presentan:</p>
+              <ul>
+                <li>Dificultades para masticar o tragar</li>
+                <li>Selectividad alimentaria</li>
+                <li>Rechazo de texturas o alimentos nuevos</li>
+                <li>Problemas en la transición a sólidos</li>
+              </ul>
+              <p>
+                El enfoque es respetuoso, gradual y centrado en el bienestar del niño, sin forzar ni generar
+                experiencias negativas con la comida.
+              </p>
+              <p>
+                La familia recibe pautas claras para aplicar en casa y avanzar de forma segura.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal" id="service-neuro" role="dialog" aria-modal="true" aria-labelledby="service-neuro-title" hidden>
+            <div class="modal__backdrop" data-modal-close></div>
+            <div class="modal__panel" role="document" tabindex="-1">
+              <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+              <h3 id="service-neuro-title">Acompañamiento en neurodiversidad</h3>
+              <p>
+                Apoyo a niños con perfiles diversos de neurodesarrollo, respetando su forma única de comunicarse y
+                relacionarse.
+              </p>
+              <p>
+                Acompaño a niños dentro del espectro del autismo y otras neurodiversidades, adaptando la intervención
+                a sus fortalezas, intereses y estilo comunicativo.
+              </p>
+              <p>Trabajamos:</p>
+              <ul>
+                <li>Comunicación funcional</li>
+                <li>Interacción social</li>
+                <li>Comprensión del entorno</li>
+                <li>Regulación y autonomía</li>
+              </ul>
+              <p>
+                El objetivo no es “normalizar”, sino potenciar la comunicación y el bienestar del niño, creando un
+                entorno seguro y comprensivo.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal" id="service-families" role="dialog" aria-modal="true" aria-labelledby="service-families-title" hidden>
+            <div class="modal__backdrop" data-modal-close></div>
+            <div class="modal__panel" role="document" tabindex="-1">
+              <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+              <h3 id="service-families-title">Orientación y acompañamiento a familias</h3>
+              <p>
+                Las familias son una parte fundamental del proceso terapéutico.
+              </p>
+              <p>
+                Ofrezco orientación a madres, padres y cuidadores para que se sientan seguros y acompañados en el
+                desarrollo de su hijo.
+              </p>
+              <p>Incluye:</p>
+              <ul>
+                <li>Pautas prácticas para casa</li>
+                <li>Resolución de dudas</li>
+                <li>Acompañamiento emocional</li>
+                <li>Coordinación con otros profesionales (si es necesario)</li>
+              </ul>
+              <p>
+                Creo firmemente que cuando la familia entiende y participa, los avances son más significativos y
+                duraderos.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container">
+          <h2>Sobre Chit Chat</h2>
+          <p>
+            Acompaño a niños y a sus familias en el desarrollo del habla, el lenguaje y la comunicación, desde un
+            enfoque cercano, respetuoso y basado en la evidencia científica.
+          </p>
+          <p>
+            Mi objetivo es crear un espacio seguro y de confianza donde cada niño pueda expresarse, aprender y crecer
+            a su propio ritmo.
+          </p>
+
+          <p>
+            Hola, soy NOMBRE, logopeda especializada en infancia, lenguaje y neurodesarrollo. Trabajo principalmente
+            con niños desde los primeros años de vida hasta la etapa escolar, acompañándolos en dificultades del habla,
+            el lenguaje, la comunicación y la alimentación.
+          </p>
+          <p>
+            Mi vocación por la logopedia infantil nace del profundo interés por comprender cómo los niños se
+            comunican y se relacionan con el mundo. Creo en la importancia del vínculo, del respeto y de la escucha,
+            y en ofrecer un acompañamiento cercano tanto al niño como a su familia.
+          </p>
+          <p>
+            Me gradué como logopeda en Irlanda y soy bilingüe, lo que me permite trabajar con una mirada sensible
+            hacia el desarrollo del lenguaje en contextos bilingües. Actualmente acompaño a familias en Zaragoza,
+            ofreciendo un espacio profesional, cálido y adaptado a cada niño.
+          </p>
+
+          <p><strong>Enfoque</strong></p>
+          <p>
+            Intervención respetuosa, basada en la evidencia y centrada en el niño y su familia. Mi forma de trabajar
+            se basa en la evidencia científica, el respeto al ritmo del niño y la colaboración activa con las familias.
+            Cada intervención es individualizada y se adapta a las necesidades, intereses y características de cada
+            niño.
+          </p>
+          <p>
+            Estoy formada en los programas Hanen - It Takes Two to Talk y More Than Words, que ponen a la familia en
+            el centro del proceso terapéutico y promueven la comunicación funcional en el día a día. Además, cuento
+            con un posgrado en disfagia, lo que me permite abordar con seguridad y sensibilidad las dificultades
+            relacionadas con la alimentación oral infantil.
+          </p>
+          <p>
+            Las sesiones son dinámicas y lúdicas, utilizando el juego como principal herramienta de aprendizaje.
+            Acompaño a las familias con pautas claras y realistas para que puedan continuar el trabajo en casa,
+            favoreciendo avances significativos y sostenibles en el tiempo.
+          </p>
+          <p>
+            Mi objetivo es que cada niño se sienta comprendido, capaz y seguro, y que las familias se sientan
+            acompañadas y confiadas durante todo el proceso.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact">
+        <div class="container">
+          <h2>Contacto</h2>
+          <p>
+            Reserva una evaluación inicial y te diseñamos un plan adaptado a las necesidades de tu hijo.
+          </p>
+
+          <form class="contact-form" action="#" method="post">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Nombre</label>
+                <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-field">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" placeholder="tuemail@ejemplo.com" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="message">Mensaje</label>
+              <textarea id="message" name="message" rows="5" placeholder="Cuéntanos tu caso" required></textarea>
+            </div>
+            <button type="submit" class="button">Enviar mensaje</button>
+          </form>
+
+          <p><strong>Preguntas frecuentes</strong></p>
+          <ul>
+            <li><strong>¿A partir de qué edad atendéis?</strong> Desde bebés (0-3) con orientación familiar, hasta adolescentes.</li>
+            <li><strong>¿Hacéis sesiones online?</strong> Sí, según el caso. También ofrecemos material para casa.</li>
+            <li><strong>¿Cómo empiezo?</strong> Reserva una evaluación inicial y te diseñamos un plan.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2026 Chit Chat. Logopedia para niños y familias.</p>
+      </div>
+    </footer>
+
     <script src="js/main.js"></script>
   </body>
 </html>
