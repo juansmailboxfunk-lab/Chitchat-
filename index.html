@@ -13,10 +13,11 @@
         <div class="header-controls">
           <nav class="site-nav" aria-label="Navegación principal">
             <ul>
-              <li><a href="#home" data-i18n="nav_home">Inicio</a></li>
-              <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
-              <li><a href="#about" data-i18n="nav_about">Sobre</a></li>
-              <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+              <li><a href="#home" class="nav-link" data-i18n="nav_home">Inicio</a></li>
+              <li><a href="#services" class="nav-link" data-i18n="nav_services">Servicios</a></li>
+              <li><a href="#about" class="nav-link" data-i18n="nav_about">Sobre</a></li>
+              <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+              <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contacto</a></li>
             </ul>
           </nav>
           <div class="lang-toggle" role="group" aria-label="Language" data-lang="es">
@@ -29,7 +30,7 @@
     </header>
 
     <main>
-      <section id="home" class="hero">
+      <section id="home" class="hero" data-spy-section>
         <div class="container hero-content">
           <p class="eyebrow">
             <span data-lang-content="es">Atención en persona y online</span>
@@ -59,7 +60,7 @@
         </div>
       </section>
 
-      <section id="services" class="section">
+      <section id="services" class="section" data-spy-section>
         <div class="container">
           <h2 data-i18n="heading_services">¿Qué ofrecemos?</h2>
           <div class="services-grid">
@@ -469,7 +470,7 @@
         </div>
       </section>
 
-      <section id="about" class="section about">
+      <section id="about" class="section about" data-spy-section>
         <div class="container">
           <h2 data-i18n="heading_about">Sobre Chit Chat</h2>
           <div data-lang-content="es">
@@ -571,7 +572,23 @@
         </div>
       </section>
 
-      <section id="contact" class="section contact">
+      <section id="faq" class="section contact" data-spy-section>
+        <div class="container">
+          <p><strong data-i18n="heading_faq">Preguntas frecuentes</strong></p>
+          <ul data-lang-content="es">
+            <li><strong>¿A partir de qué edad atendéis?</strong> Desde bebés (0-3) con orientación familiar, hasta adolescentes.</li>
+            <li><strong>¿Hacéis sesiones online?</strong> Sí, según el caso. También ofrecemos material para casa.</li>
+            <li><strong>¿Cómo empiezo?</strong> Reserva una evaluación inicial y te diseñamos un plan.</li>
+          </ul>
+          <ul data-lang-content="en" hidden>
+            <li><strong>From what age do you work with children?</strong> From babies (0–3 years) with family guidance, up to adolescents.</li>
+            <li><strong>Do you offer online sessions?</strong> Yes, depending on the case. We also provide materials for home support.</li>
+            <li><strong>How do I get started?</strong> Book an initial assessment and we will design a personalised plan for your child.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact" data-spy-section>
         <div class="container">
           <h2 data-i18n="heading_contact">Contacto</h2>
           <p>
@@ -595,18 +612,6 @@
             </div>
             <button type="submit" class="button">Enviar mensaje</button>
           </form>
-
-          <p><strong data-i18n="heading_faq">Preguntas frecuentes</strong></p>
-          <ul data-lang-content="es">
-            <li><strong>¿A partir de qué edad atendéis?</strong> Desde bebés (0-3) con orientación familiar, hasta adolescentes.</li>
-            <li><strong>¿Hacéis sesiones online?</strong> Sí, según el caso. También ofrecemos material para casa.</li>
-            <li><strong>¿Cómo empiezo?</strong> Reserva una evaluación inicial y te diseñamos un plan.</li>
-          </ul>
-          <ul data-lang-content="en" hidden>
-            <li><strong>From what age do you work with children?</strong> From babies (0–3 years) with family guidance, up to adolescents.</li>
-            <li><strong>Do you offer online sessions?</strong> Yes, depending on the case. We also provide materials for home support.</li>
-            <li><strong>How do I get started?</strong> Book an initial assessment and we will design a personalised plan for your child.</li>
-          </ul>
         </div>
       </section>
     </main>

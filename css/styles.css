@@ -11,6 +11,7 @@
 
   --container: 1120px;
   --header-height: 74px;
+  --header-offset: calc(var(--header-height) + var(--space-3));
 
   --radius-sm: 10px;
   --radius-md: 14px;
@@ -55,7 +56,7 @@ body {
 }
 
 html {
-  scroll-padding-top: calc(var(--header-height) + var(--space-3));
+  scroll-padding-top: var(--header-offset);
 }
 
 body {
@@ -86,8 +87,8 @@ a {
   margin: 0 auto;
 }
 
-main section {
-  scroll-margin-top: calc(var(--header-height) + var(--space-3));
+section[id] {
+  scroll-margin-top: var(--header-offset);
 }
 
 .site-header {
@@ -97,6 +98,12 @@ main section {
   backdrop-filter: blur(8px);
   background: rgba(251, 250, 248, 0.88);
   border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(251, 250, 248, 0.95);
+  box-shadow: 0 8px 22px rgba(24, 32, 40, 0.08);
 }
 
 .header-inner {
@@ -131,13 +138,31 @@ main section {
 .site-nav a {
   color: var(--muted);
   font-size: 0.96rem;
-  font-weight: 600;
+  font-weight: 580;
   letter-spacing: 0.02em;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: transparent;
+  text-underline-offset: 0.32em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease, font-weight 0.2s ease;
 }
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
   color: var(--primary);
+  text-decoration-color: rgba(26, 79, 181, 0.45);
+}
+
+.site-nav .nav-link.active {
+  color: var(--text);
+  font-weight: 700;
+  text-decoration-color: var(--primary);
+}
+
+.site-nav .nav-link:focus-visible {
+  outline: 2px solid rgba(26, 79, 181, 0.35);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .lang-toggle {
@@ -582,7 +607,9 @@ p {
   .lang-indicator,
   .lang-btn,
   .button,
-  .card {
+  .card,
+  .site-header,
+  .site-nav a {
     transition: none;
   }
 

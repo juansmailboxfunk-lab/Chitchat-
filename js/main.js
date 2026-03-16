@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_home: 'Inicio',
       nav_services: 'Servicios',
       nav_about: 'Sobre',
+      nav_faq: 'FAQ',
       nav_contact: 'Contacto',
       cta_book: 'Reserva una cita',
       heading_services: '¿Qué ofrecemos?',
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_home: 'Home',
       nav_services: 'Services',
       nav_about: 'About',
+      nav_faq: 'FAQ',
       nav_contact: 'Contact',
       cta_book: 'Book an appointment',
       heading_services: 'What we offer',
@@ -34,6 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalTriggers = document.querySelectorAll('[data-modal]');
   const languageButtons = document.querySelectorAll('.lang-btn[data-lang]');
   const languageToggle = document.querySelector('.lang-toggle');
+  const header = document.querySelector('.site-header');
+  const spySections = document.querySelectorAll('section[data-spy-section][id]');
   const modalCloseSelectors = '[data-modal-close]';
   const focusableSelector = [
     'a[href]',
@@ -47,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeModal = null;
   let activeTrigger = null;
   let closeTimerId = null;
+  let currentActiveId = '';
 
   const persistLanguage = (lang) => {
     try {
@@ -112,6 +117,27 @@ document.addEventListener('DOMContentLoaded', () => {
     persistLanguage(nextLanguage);
   };
 
+  const setActiveNavLink = (sectionId) => {
+    if (!sectionId || sectionId === currentActiveId) return;
+    currentActiveId = sectionId;
+
+    navLinks.forEach((link) => {
+      const href = link.getAttribute('href');
+      const isActive = href === `#${sectionId}`;
+      link.classList.toggle('active', isActive);
+      if (isActive) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  const updateHeaderScrolledState = () => {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+
   navLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       const targetId = link.getAttribute('href');
@@ -121,12 +147,77 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!targetElement) return;
 
       event.preventDefault();
+      setActiveNavLink(targetId.replace('#', ''));
       targetElement.scrollIntoView({
         behavior: prefersReducedMotion ? 'auto' : 'smooth',
         block: 'start'
       });
     });
   });
+
+  const initScrollSpy = () => {
+    if (!spySections.length) return;
+
+    const activateFromViewport = () => {
+      const headerOffset = header ? header.offsetHeight + 24 : 98;
+      let activeId = '';
+      let bestTop = Number.POSITIVE_INFINITY;
+
+      spySections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const isInRange = rect.top <= headerOffset && rect.bottom > headerOffset;
+        if (isInRange) {
+          const proximity = Math.abs(rect.top - headerOffset);
+          if (proximity < bestTop) {
+            bestTop = proximity;
+            activeId = section.id;
+          }
+        }
+      });
+
+      if (!activeId) {
+        const firstVisible = Array.from(spySections).find((section) => section.getBoundingClientRect().top > 0);
+        activeId = firstVisible ? firstVisible.id : spySections[spySections.length - 1].id;
+      }
+
+      setActiveNavLink(activeId);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visibleEntries = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+          if (visibleEntries.length) {
+            setActiveNavLink(visibleEntries[0].target.id);
+          } else {
+            activateFromViewport();
+          }
+        },
+        {
+          root: null,
+          rootMargin: '-35% 0px -55% 0px',
+          threshold: [0.05, 0.2, 0.4, 0.6]
+        }
+      );
+
+      spySections.forEach((section) => observer.observe(section));
+    } else {
+      let rafId = 0;
+      const throttledSpy = () => {
+        if (rafId) return;
+        rafId = window.requestAnimationFrame(() => {
+          activateFromViewport();
+          rafId = 0;
+        });
+      };
+
+      window.addEventListener('scroll', throttledSpy, { passive: true });
+      window.addEventListener('resize', throttledSpy);
+      activateFromViewport();
+    }
+  };
 
   const getFocusableElements = (modal) =>
     Array.from(modal.querySelectorAll(focusableSelector)).filter((element) => !element.hasAttribute('hidden'));
@@ -236,5 +327,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  updateHeaderScrolledState();
+  window.addEventListener('scroll', updateHeaderScrolledState, { passive: true });
+  initScrollSpy();
   applyLanguage(getInitialLanguage());
 });
