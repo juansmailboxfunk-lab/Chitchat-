@@ -1,154 +1,221 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ClearSpeak Speech Therapy</title>
-  <meta name="description" content="Speech therapy services for children, teens, and adults.">
+  <title>Chit Chat | Logopedia para ninos y familias</title>
+  <meta name="description" content="Logopedia para ninos y familias. Sesiones cercanas, ludicas y basadas en evidencia. Atencion en persona y online.">
   <link rel="icon" href="assets/illustrations/crocodile-mini-icon.png" type="image/png">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top">
-        <img src="assets/illustrations/crocodile-mini-icon.png" alt="ClearSpeak crocodile icon" width="40" height="40" loading="lazy">
-        <span>ClearSpeak</span>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand" aria-label="Chit Chat inicio">
+        <img src="assets/illustrations/crocodile-mini-icon.png" alt="Icono de cocodrilo de Chit Chat" width="40" height="40" loading="lazy">
+        <span class="brand-name">Chit Chat</span>
       </a>
-      <nav aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+
+      <div class="header-controls">
+        <nav class="site-nav" aria-label="Navegacion principal">
+          <ul>
+            <li><a href="#home" class="nav-link is-active"><span data-lang-content="es">Inicio</span><span data-lang-content="en" hidden>Home</span></a></li>
+            <li><a href="#services" class="nav-link"><span data-lang-content="es">Servicios</span><span data-lang-content="en" hidden>Services</span></a></li>
+            <li><a href="#about" class="nav-link"><span data-lang-content="es">Sobre mi</span><span data-lang-content="en" hidden>About</span></a></li>
+            <li><a href="#faq" class="nav-link"><span data-lang-content="es">FAQ</span><span data-lang-content="en" hidden>FAQ</span></a></li>
+            <li><a href="#contact" class="nav-link"><span data-lang-content="es">Contacto</span><span data-lang-content="en" hidden>Contact</span></a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-toggle" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn is-active" data-lang="es" aria-pressed="true">ES</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
+  <main id="main">
+    <section id="home" class="hero" data-spy-section>
       <div class="container hero-grid">
         <div class="hero-content">
-          <p class="eyebrow">Speech Therapy Care</p>
-          <h1 id="hero-title">Helping Every Voice Be Heard</h1>
-          <p class="hero-copy">Personalized, evidence-based speech therapy for articulation, language, fluency, and confidence in communication.</p>
-          <a class="button" href="#contact">Book a Consultation</a>
+          <p class="eyebrow">
+            <span data-lang-content="es">Atencion en persona y online</span>
+            <span data-lang-content="en" hidden>In-person and online support</span>
+          </p>
+          <h1>
+            <span data-lang-content="es">Chit Chat - Logopedia para ninos y familias</span>
+            <span data-lang-content="en" hidden>Chit Chat - Speech and Language Therapy for Children and Families</span>
+          </h1>
+          <p class="subheadline">
+            <span data-lang-content="es">Sesiones cercanas, ludicas y basadas en evidencia.</span>
+            <span data-lang-content="en" hidden>Warm, playful, and evidence-based sessions.</span>
+          </p>
+          <ul class="hero-points" data-lang-content="es">
+            <li>Logopeda titulada</li>
+            <li>Atencion a ninos</li>
+            <li>Neurodiversidad</li>
+            <li>Apoyo a familias</li>
+          </ul>
+          <ul class="hero-points" data-lang-content="en" hidden>
+            <li>Qualified speech and language therapist</li>
+            <li>Child-focused care</li>
+            <li>Neurodiversity-affirming support</li>
+            <li>Family guidance</li>
+          </ul>
+          <a href="#contact" class="button">
+            <span data-lang-content="es">Reserva una cita</span>
+            <span data-lang-content="en" hidden>Book a consultation</span>
+          </a>
         </div>
+
         <figure class="section-figure hero-figure">
-          <img src="assets/illustrations/crocodile-chitchat-hero.png" alt="Friendly crocodile speech therapist welcoming families to ClearSpeak">
+          <img src="assets/illustrations/crocodile-chitchat-hero.png" alt="Ilustracion de Chit Chat con un cocodrilo amistoso acompanando a una familia">
         </figure>
       </div>
     </section>
 
-    <section class="section" id="services" aria-labelledby="services-title">
+    <section id="services" class="section" data-spy-section>
       <div class="container">
-        <h2 id="services-title">Services</h2>
+        <div class="section-head">
+          <h2><span data-lang-content="es">Que ofrecemos?</span><span data-lang-content="en" hidden>What we offer</span></h2>
+          <p class="muted">
+            <span data-lang-content="es">Intervencion adaptada a cada nino, con seguimiento y pautas claras para el dia a dia.</span>
+            <span data-lang-content="en" hidden>Support tailored to each child, with follow-up and clear guidance for daily life.</span>
+          </p>
+        </div>
+
         <div class="services-grid">
           <article class="service-card">
-            <img class="card-illustration" src="assets/illustrations/crocodile-early-intervention.png" alt="Crocodile therapist supporting a young child in early intervention" loading="lazy">
-            <h3>Early Intervention</h3>
-            <p>Foundational communication support for babies, toddlers, and preschoolers.</p>
+            <img class="card-illustration" src="assets/illustrations/crocodile-early-intervention.png" alt="Cocodrilo terapeuta acompanando a un bebe en intervencion temprana" loading="lazy">
+            <h3><span data-lang-content="es">Estimulacion temprana (0-3 anos)</span><span data-lang-content="en" hidden>Early intervention (0-3 years)</span></h3>
+            <p><span data-lang-content="es">Acompanamos el desarrollo comunicativo de los mas pequenos desde sus primeros meses de vida.</span><span data-lang-content="en" hidden>We support communication development from the earliest months of life.</span></p>
+            <button type="button" class="button button-secondary service-more" data-modal="service-early"><span data-lang-content="es">Mas informacion</span><span data-lang-content="en" hidden>Learn more</span></button>
           </article>
+
           <article class="service-card">
-            <img class="card-illustration" src="assets/illustrations/crocodile-language.png" alt="Crocodile therapist building language skills through play" loading="lazy">
-            <h3>Language Therapy</h3>
-            <p>Personalized language development sessions for understanding, expression, and confidence.</p>
+            <img class="card-illustration" src="assets/illustrations/crocodile-language.png" alt="Cocodrilo terapeuta trabajando lenguaje y comunicacion con una nina" loading="lazy">
+            <h3><span data-lang-content="es">Comunicacion y lenguaje</span><span data-lang-content="en" hidden>Communication and language</span></h3>
+            <p><span data-lang-content="es">Intervencion en dificultades del lenguaje oral y la comunicacion adaptada a cada nino.</span><span data-lang-content="en" hidden>Support for oral language and communication difficulties tailored to each child.</span></p>
+            <button type="button" class="button button-secondary service-more" data-modal="service-language"><span data-lang-content="es">Mas informacion</span><span data-lang-content="en" hidden>Learn more</span></button>
           </article>
+
           <article class="service-card">
-            <img class="card-illustration" src="assets/illustrations/crocodile-articulation.png" alt="Crocodile therapist practicing speech sounds with a child" loading="lazy">
-            <h3>Articulation Therapy</h3>
-            <p>Targeted support for clear and accurate speech sound production.</p>
+            <img class="card-illustration" src="assets/illustrations/crocodile-articulation.png" alt="Cocodrilo terapeuta practicando sonidos del habla con un nino" loading="lazy">
+            <h3><span data-lang-content="es">Habla, fonemas y articulacion</span><span data-lang-content="en" hidden>Speech sounds and articulation</span></h3>
+            <p><span data-lang-content="es">Ayudamos a mejorar la pronunciacion de los sonidos del habla de forma respetuosa y divertida.</span><span data-lang-content="en" hidden>We help improve speech sound production in a respectful and engaging way.</span></p>
+            <button type="button" class="button button-secondary service-more" data-modal="service-speech"><span data-lang-content="es">Mas informacion</span><span data-lang-content="en" hidden>Learn more</span></button>
           </article>
+
           <article class="service-card">
-            <img class="card-illustration" src="assets/illustrations/crocodile-feeding.png" alt="Crocodile therapist guiding a child through feeding support" loading="lazy">
-            <h3>Feeding Support</h3>
-            <p>Gentle, evidence-based support for mealtimes, textures, and oral-motor confidence.</p>
+            <img class="card-illustration" src="assets/illustrations/crocodile-feeding.png" alt="Cocodrilo terapeuta acompanando alimentacion oral infantil" loading="lazy">
+            <h3><span data-lang-content="es">Alimentacion oral infantil</span><span data-lang-content="en" hidden>Pediatric feeding support</span></h3>
+            <p><span data-lang-content="es">Acompanamiento en dificultades relacionadas con la alimentacion, la masticacion y la aceptacion de alimentos.</span><span data-lang-content="en" hidden>Support for eating, chewing, swallowing, and acceptance of foods.</span></p>
+            <button type="button" class="button button-secondary service-more" data-modal="service-feeding"><span data-lang-content="es">Mas informacion</span><span data-lang-content="en" hidden>Learn more</span></button>
           </article>
+
           <article class="service-card">
-            <img class="card-illustration" src="assets/illustrations/crocodile-neurodiversity.png" alt="Crocodile therapist supporting a neurodivergent child in a calm session" loading="lazy">
-            <h3>Neurodiversity Support</h3>
-            <p>Affirming therapy that supports communication, regulation, and connection on each child&apos;s terms.</p>
+            <img class="card-illustration" src="assets/illustrations/crocodile-neurodiversity.png" alt="Cocodrilo terapeuta ofreciendo apoyo en neurodiversidad" loading="lazy">
+            <h3><span data-lang-content="es">Acompanamiento en neurodiversidad</span><span data-lang-content="en" hidden>Neurodiversity support</span></h3>
+            <p><span data-lang-content="es">Apoyo a ninos con perfiles diversos de neurodesarrollo, respetando su forma unica de comunicarse.</span><span data-lang-content="en" hidden>Support for children with diverse neurodevelopmental profiles, respecting their unique communication style.</span></p>
+            <button type="button" class="button button-secondary service-more" data-modal="service-neuro"><span data-lang-content="es">Mas informacion</span><span data-lang-content="en" hidden>Learn more</span></button>
           </article>
+
           <article class="service-card">
-            <img class="card-illustration" src="assets/illustrations/crocodile-family.png" alt="Crocodile therapist sharing guidance with family members" loading="lazy">
-            <h3>Family Guidance</h3>
-            <p>Practical coaching and home strategies so progress carries into everyday routines.</p>
+            <img class="card-illustration" src="assets/illustrations/crocodile-family.png" alt="Cocodrilo terapeuta orientando a una familia" loading="lazy">
+            <h3><span data-lang-content="es">Orientacion y acompanamiento a familias</span><span data-lang-content="en" hidden>Family guidance and support</span></h3>
+            <p><span data-lang-content="es">Las familias son una parte fundamental del proceso terapeutico.</span><span data-lang-content="en" hidden>Families are a fundamental part of the therapeutic process.</span></p>
+            <button type="button" class="button button-secondary service-more" data-modal="service-families"><span data-lang-content="es">Mas informacion</span><span data-lang-content="en" hidden>Learn more</span></button>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="about" aria-labelledby="about-title">
-      <div class="container split-section narrow-wide">
+    <section id="about" class="section section-alt" data-spy-section>
+      <div class="container split-section">
         <div>
-          <h2 id="about-title">About</h2>
-          <p>ClearSpeak is a speech therapy practice focused on compassionate, personalized care. We partner with families and clients to set clear goals, track progress, and build strong communication skills that transfer to daily life.</p>
+          <h2><span data-lang-content="es">Sobre Chit Chat</span><span data-lang-content="en" hidden>About Chit Chat</span></h2>
+          <div data-lang-content="es">
+            <p>Acompano a ninos y a sus familias en el desarrollo del habla, el lenguaje y la comunicacion desde un enfoque cercano, respetuoso y basado en la evidencia cientifica.</p>
+            <p>Mi objetivo es crear un espacio seguro y de confianza donde cada nino pueda expresarse, aprender y crecer a su propio ritmo.</p>
+            <p>Hola, soy NOMBRE, logopeda especializada en infancia, lenguaje y neurodesarrollo. Trabajo principalmente con ninos desde los primeros anos de vida hasta la etapa escolar.</p>
+          </div>
+          <div data-lang-content="en" hidden>
+            <p>I support children and their families in speech, language, and communication through a warm, respectful, and evidence-based approach.</p>
+            <p>My goal is to create a safe and trusting space where every child can express themselves, learn, and grow at their own pace.</p>
+            <p>Hello, I am NAME, a speech and language therapist specialised in childhood, language, and neurodevelopment. I work mainly with children from the early years through school age.</p>
+          </div>
         </div>
         <figure class="section-figure">
-          <img src="assets/illustrations/crocodile-about.png" alt="Crocodile speech therapist introducing the ClearSpeak approach" loading="lazy">
+          <img src="assets/illustrations/crocodile-about.png" alt="Ilustracion de un cocodrilo terapeuta presentando el enfoque de Chit Chat" loading="lazy">
         </figure>
       </div>
     </section>
 
-    <section class="section" id="faq" aria-labelledby="faq-title">
-      <div class="container split-section narrow-wide">
+    <section id="faq" class="section" data-spy-section>
+      <div class="container split-section">
         <div>
-          <h2 id="faq-title">FAQ</h2>
+          <div class="section-head">
+            <h2>FAQ</h2>
+            <p class="muted"><span data-lang-content="es">Respuestas rapidas para empezar con calma.</span><span data-lang-content="en" hidden>Quick answers to help you get started calmly.</span></p>
+          </div>
           <div class="faq-list">
             <details>
-              <summary>How long are sessions?</summary>
-              <p>Most sessions are 45 to 60 minutes, depending on the treatment plan.</p>
+              <summary><span data-lang-content="es">A partir de que edad atendeis?</span><span data-lang-content="en" hidden>What ages do you work with?</span></summary>
+              <p><span data-lang-content="es">Desde bebes con orientacion familiar hasta adolescentes.</span><span data-lang-content="en" hidden>From babies with family guidance through adolescence.</span></p>
             </details>
             <details>
-              <summary>Do you offer virtual appointments?</summary>
-              <p>Yes. We offer both in-person and secure teletherapy sessions.</p>
+              <summary><span data-lang-content="es">Haceis sesiones online?</span><span data-lang-content="en" hidden>Do you offer online sessions?</span></summary>
+              <p><span data-lang-content="es">Si, segun el caso. Tambien ofrecemos material para casa.</span><span data-lang-content="en" hidden>Yes, depending on the case. We also provide home support materials.</span></p>
             </details>
             <details>
-              <summary>What ages do you work with?</summary>
-              <p>We support children, teens, and adults across a range of communication needs.</p>
+              <summary><span data-lang-content="es">Como empiezo?</span><span data-lang-content="en" hidden>How do I get started?</span></summary>
+              <p><span data-lang-content="es">Reserva una evaluacion inicial y disenaremos un plan personalizado.</span><span data-lang-content="en" hidden>Book an initial assessment and we will design a personalised plan.</span></p>
             </details>
           </div>
         </div>
         <figure class="section-figure">
-          <img src="assets/illustrations/crocodile-faq.png" alt="Crocodile therapist answering common parent questions" loading="lazy">
+          <img src="assets/illustrations/crocodile-faq.png" alt="Ilustracion de un cocodrilo terapeuta respondiendo preguntas frecuentes" loading="lazy">
         </figure>
       </div>
     </section>
 
-    <section class="section booking-section" id="booking" aria-labelledby="booking-title">
-      <div class="container split-section narrow-wide">
+    <section id="booking" class="section booking-section" data-spy-section>
+      <div class="container split-section">
         <div>
-          <h2 id="booking-title">Booking</h2>
-          <p>Start with an initial consultation so we can understand your goals, talk through concerns, and recommend the right support plan.</p>
-          <a class="button" href="#contact">Schedule Your First Visit</a>
+          <h2><span data-lang-content="es">Reserva</span><span data-lang-content="en" hidden>Booking</span></h2>
+          <p><span data-lang-content="es">Empieza con una evaluacion inicial para entender vuestras necesidades y recomendar el mejor plan de apoyo.</span><span data-lang-content="en" hidden>Start with an initial assessment to understand your needs and recommend the best support plan.</span></p>
+          <a href="#contact" class="button"><span data-lang-content="es">Reservar primera cita</span><span data-lang-content="en" hidden>Book first appointment</span></a>
         </div>
         <figure class="section-figure">
-          <img src="assets/illustrations/crocodile-booking.png" alt="Crocodile therapist preparing a child's booking and schedule" loading="lazy">
+          <img src="assets/illustrations/crocodile-booking.png" alt="Ilustracion de un cocodrilo terapeuta preparando una reserva" loading="lazy">
         </figure>
       </div>
     </section>
 
-    <section class="section section-alt" id="contact" aria-labelledby="contact-title">
+    <section id="contact" class="section section-alt" data-spy-section>
       <div class="container split-section contact-layout">
         <div>
-          <h2 id="contact-title">Contact</h2>
-          <p>Ready to get started? Reach out to schedule an initial consultation.</p>
-          <form class="contact-form" action="#" method="post">
-            <label for="name">Name</label>
+          <h2><span data-lang-content="es">Contacto</span><span data-lang-content="en" hidden>Contact</span></h2>
+          <p><span data-lang-content="es">Reserva una evaluacion inicial y te ayudare a encontrar el plan adecuado para tu hijo.</span><span data-lang-content="en" hidden>Book an initial assessment and I will help you find the right plan for your child.</span></p>
+
+          <form class="contact-form" action="#" method="post" novalidate>
+            <label for="name"><span data-lang-content="es">Nombre</span><span data-lang-content="en" hidden>Name</span></label>
             <input id="name" name="name" type="text" required>
 
-            <label for="email">Email</label>
+            <label for="email"><span data-lang-content="es">Correo electronico</span><span data-lang-content="en" hidden>Email</span></label>
             <input id="email" name="email" type="email" required>
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="message"><span data-lang-content="es">Mensaje</span><span data-lang-content="en" hidden>Message</span></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
-            <button type="submit" class="button">Send Message</button>
+            <button type="submit" class="button"><span data-lang-content="es">Enviar mensaje</span><span data-lang-content="en" hidden>Send message</span></button>
           </form>
         </div>
         <figure class="section-figure map-figure">
-          <img src="assets/illustrations/crocodile-map.png" alt="Crocodile therapist beside a map to show where to find the clinic" loading="lazy">
+          <img src="assets/illustrations/crocodile-map.png" alt="Ilustracion de un cocodrilo terapeuta junto a un mapa para ubicar la consulta" loading="lazy">
         </figure>
       </div>
     </section>
@@ -156,9 +223,69 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> ClearSpeak Speech Therapy. All rights reserved.</p>
+      <p><span data-lang-content="es">© <span id="year"></span> Chit Chat. Logopedia para ninos y familias.</span><span data-lang-content="en" hidden>© <span id="year-en"></span> Chit Chat. Speech and language therapy for children and families.</span></p>
     </div>
   </footer>
+
+  <div class="modal" id="service-early" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="document" tabindex="-1">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+      <h3><span data-lang-content="es">Estimulacion temprana (0-3 anos)</span><span data-lang-content="en" hidden>Early intervention (0-3 years)</span></h3>
+      <div data-lang-content="es"><p>Trabajamos la atencion conjunta, los primeros gestos, la comprension del lenguaje y el juego funcional con pautas claras para la familia.</p></div>
+      <div data-lang-content="en" hidden><p>We work on joint attention, first gestures, language understanding, and functional play with clear guidance for families.</p></div>
+    </div>
+  </div>
+
+  <div class="modal" id="service-language" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="document" tabindex="-1">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+      <h3><span data-lang-content="es">Comunicacion y lenguaje</span><span data-lang-content="en" hidden>Communication and language</span></h3>
+      <div data-lang-content="es"><p>Intervencion ludica y funcional para apoyar vocabulario, comprension, expresion y construccion de frases.</p></div>
+      <div data-lang-content="en" hidden><p>Playful and functional intervention to support vocabulary, comprehension, expression, and sentence building.</p></div>
+    </div>
+  </div>
+
+  <div class="modal" id="service-speech" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="document" tabindex="-1">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+      <h3><span data-lang-content="es">Habla, fonemas y articulacion</span><span data-lang-content="en" hidden>Speech sounds and articulation</span></h3>
+      <div data-lang-content="es"><p>Ayudamos a mejorar la produccion de sonidos del habla con actividades motivadoras y objetivos funcionales.</p></div>
+      <div data-lang-content="en" hidden><p>We help improve speech sound production through motivating activities and functional goals.</p></div>
+    </div>
+  </div>
+
+  <div class="modal" id="service-feeding" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="document" tabindex="-1">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+      <h3><span data-lang-content="es">Alimentacion oral infantil</span><span data-lang-content="en" hidden>Pediatric feeding support</span></h3>
+      <div data-lang-content="es"><p>Apoyo respetuoso para masticacion, transicion a solidos, selectividad alimentaria y aceptacion de nuevas texturas.</p></div>
+      <div data-lang-content="en" hidden><p>Respectful support for chewing, transition to solids, food selectivity, and acceptance of new textures.</p></div>
+    </div>
+  </div>
+
+  <div class="modal" id="service-neuro" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="document" tabindex="-1">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+      <h3><span data-lang-content="es">Acompanamiento en neurodiversidad</span><span data-lang-content="en" hidden>Neurodiversity support</span></h3>
+      <div data-lang-content="es"><p>Intervencion adaptada a fortalezas, intereses y estilo comunicativo, centrada en bienestar y comunicacion funcional.</p></div>
+      <div data-lang-content="en" hidden><p>Support adapted to strengths, interests, and communication style, centred on wellbeing and functional communication.</p></div>
+    </div>
+  </div>
+
+  <div class="modal" id="service-families" role="dialog" aria-modal="true" aria-hidden="true" hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__panel" role="document" tabindex="-1">
+      <button type="button" class="modal__close" data-modal-close aria-label="Cerrar">×</button>
+      <h3><span data-lang-content="es">Orientacion y acompanamiento a familias</span><span data-lang-content="en" hidden>Family guidance and support</span></h3>
+      <div data-lang-content="es"><p>Las familias reciben pautas practicas, resolucion de dudas y acompanamiento para sostener los avances en casa.</p></div>
+      <div data-lang-content="en" hidden><p>Families receive practical guidance, problem-solving support, and tools to carry progress into everyday routines.</p></div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
